@@ -24,7 +24,7 @@ export const PackagesMain: React.FC = () => {
 
   return (
     <>
-      <Typography>Choose a deal that suits your needs</Typography>
+      <div className="flex justify-center ">חפש לפי מדינה</div>
       <SelectCountry />
       {selectedCountries.length ? (
         <>

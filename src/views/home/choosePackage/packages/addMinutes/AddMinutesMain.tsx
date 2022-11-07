@@ -6,9 +6,9 @@ import { RangeSlider } from "./RangeSlider";
 export const AddMinutes = () => {
   const [dollars, setDollars] = useState<number>(0);
   return (
-    <AddMinutesContainer>
+    <div className="flex-col">
       <RangeSlider setDollars={setDollars} />
       <DisplayMinutes dollars={dollars} />
-    </AddMinutesContainer>
+    </div>
   );
 };

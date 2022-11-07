@@ -4,8 +4,10 @@ export const RangeSlider: React.FC<{ setDollars: (sum: number) => void }> = ({
   setDollars,
 }) => {
   return (
-    <div className="relative pt-1">
-      <label className="form-label">הוסחף זמן אוויר</label>
+    <div className="flex-col align-center w-2/3 m-auto justify-center">
+      <div className="flex justify-center align-center px-4 text-xs">
+        הוסחיף זמן אוויר
+      </div>
       <input
         onChange={(e) => setDollars(parseInt(e.target.value))}
         type="range"
@@ -14,9 +16,8 @@ export const RangeSlider: React.FC<{ setDollars: (sum: number) => void }> = ({
         step="5"
         className="
       form-range
+      px-0
       w-full
-      h-6
-      p-0
       bg-transparent
       focus:outline-none focus:ring-0 focus:shadow-none
     "
