@@ -1,4 +1,3 @@
-import { Field } from "formik";
 import React from "react";
 import { splitAndCapitalize } from "../../data/splitAndCapitalize";
 import {
@@ -12,7 +11,7 @@ import {
 import { FormField } from "./FormField";
 import Select from "react-select";
 import { countriesList } from "../../data/data";
-
+const handleChange = () => {};
 export const FormEntry: React.FC<{
   inputfield: string;
   errors: any;
@@ -34,9 +33,9 @@ export const FormEntry: React.FC<{
               <Select
                 name={inputfield}
                 options={countriesList}
-                onChange={(selected) => {
-                 selected?  setValues({ ...values, country: selected.label }): null;
-                }}
+                onChange={(selected: any) =>
+                  setValues({ ...values, country: selected.label })
+                }
               />
             )
           ) : (

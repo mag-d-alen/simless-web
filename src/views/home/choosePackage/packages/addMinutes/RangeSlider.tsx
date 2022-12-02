@@ -14,6 +14,7 @@ export const RangeSlider: React.FC<{ setDollars: (sum: number) => void }> = ({
         min="0"
         max="50"
         step="5"
+        defaultValue={0}
         className="
       form-range
       px-0

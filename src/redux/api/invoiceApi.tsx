@@ -1,5 +1,4 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/dist/query/react";
-("@reduxjs/toolkit/dist/query");
 import { invoiceUrl } from "../../data/data";
 
 export const invoiceApi = createApi({

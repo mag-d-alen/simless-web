@@ -1,6 +1,12 @@
 import React from "react";
-import { AddMinutesContainer } from "./addMinutesStyled";
 
 export const DisplayMinutes: React.FC<{ dollars: number }> = ({ dollars }) => {
-  return <div className="flex justify-center text-xs">{dollars}$ הוספת </div>;
+  return (
+    <div className="flex-col align-center text-xs">
+      <div className="flex justify-center">{dollars}$ הוספת </div>;
+      <div className="flex justify-center">
+        כל דולר הוא זמן שיחה במידנת היעד
+      </div>
+    </div>
+  );
 };

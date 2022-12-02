@@ -8,6 +8,7 @@ import { contactApi } from "./api/contactApi";
 import { contactSlice } from "./ContactSlice";
 import { paymentApi } from "./api/paymentApi";
 import { invoiceApi } from "./api/invoiceApi";
+import { simActionsSlice } from "./api/SimActionsSlice";
 
 const rootReducer = combineReducers({
   [simApi.reducerPath]: simApi.reducer,
@@ -20,6 +21,7 @@ const rootReducer = combineReducers({
   simPurchase: packagesSlice.reducer,
   topUp: topUpSlice.reducer,
   contactUs: contactSlice.reducer,
+  simActions: simActionsSlice.reducer,
 });
 
 export const store = configureStore({

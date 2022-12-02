@@ -24,11 +24,13 @@ export const PackagesMain: React.FC = () => {
 
   return (
     <>
-      <div className="flex justify-center ">חפש לפי מדינה</div>
+      <div className="flex justify-center align-center">חפש לפי מדינה</div>
       <SelectCountry />
       {selectedCountries.length ? (
         <>
-          <Typography>חבילות מומלצות</Typography>
+          <div className="flex justify-center align-center mb-8">
+            חבילות מומלצות
+          </div>
           <AddMinutes />
           <PackagesContainer>
             {findPackages().map(

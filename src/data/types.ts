@@ -35,6 +35,10 @@ export type InitialContactStateType = {
 export type InitialPackagesState = {
   chosenDeal: string[];
 };
+export type InitialSimActionsState = {
+  simNumber: number|null;
+  simStartDate: Date| null;
+};
 export type InitialUserInfoType = {
   userSimNumber: string;
   simData: SimDataType;

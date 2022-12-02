@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { AddMinutesContainer } from "./addMinutesStyled";
 import { DisplayMinutes } from "./DisplayMinutes";
 import { RangeSlider } from "./RangeSlider";
 
