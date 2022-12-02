@@ -30,7 +30,7 @@ export const EditDate: React.FC<{ closeDialog: () => void }> = ({
             value && dispatch(setSimStartDate(value.startDate));
             closeDialog();
           }}>
-          שמור שינויים
+          שמור השינויים
         </button>
       </div>
     </>

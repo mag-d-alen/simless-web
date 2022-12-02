@@ -26,7 +26,7 @@ export const EditSimNumber: React.FC<{ closeDialog: () => void }> = ({
               dispatch(setSimNumber(parseInt(userInputNumber)));
             closeDialog();
           }}>
-          שמור שינויים
+          שמור השינויים
         </button>
       </div>
     </div>
