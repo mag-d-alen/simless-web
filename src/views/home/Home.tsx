@@ -5,11 +5,13 @@ import { useSelector } from "react-redux";
 import { PackagesMain } from "./choosePackage/PackagesMain";
 import { ProgressBar } from "../ProgressBar";
 import { EditButton } from "../editButton/EditButton";
-import { DateIcon } from "../editButton/DateIcon";
-import { EditDialogWrapper } from "../editButton/EditDialogWrapper";
+import { DateIcon } from "../editButton/icons/DateIcon";
+import { EditDialogWrapper } from "../editButton/modal/EditDialogWrapper";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { SimIcon } from "../editButton/SimIcon";
+import { SimIcon } from "../editButton/icons/SimIcon";
 import { number } from "yup";
+import { TravelIcon } from "../editButton/icons/TravelIcon";
+import { SelectedCountryType } from "../../data/types";
 
 export const Home: React.FC = () => {
   const [openEditDialog, setOpenEditDialog] = useState<{
@@ -17,9 +19,11 @@ export const Home: React.FC = () => {
     summary: string;
   } | null>(null);
 
-  const chosenDeal = useSelector((s: any) => s.simPurchase.chosenDeal);
-  const checkoutStep = useSelector((s: any) => s.topUp.checkoutStep);
-  const { simNumber, simStartDate } = useSelector((s: any) => s.simActions);
+  // const chosenDeal = useSelector((s: any) => s.simPurchase.chosenDeal);
+  // const checkoutStep = useSelector((s: any) => s.topUp.checkoutStep);
+  const { simNumber, simStartDate, selectedCountries } = useSelector(
+    (s: any) => s.simActions
+  );
 
   return (
     <>
@@ -54,20 +58,27 @@ export const Home: React.FC = () => {
             }
             icon={<DateIcon />}
           />
-          {/* <EditButton
-            handleClick={() =>
-              simNumber
-                ? setOpenEditDialog(`${simNumber} תערוך מספר הסים`)
-                : setOpenEditDialog("תערוך מיספר הסים ")
-            }
-             summary={
-              simStartDate
-                ? `${simStartDate} תארוך הפעלת הסים`
-                : "תבחר תארוך הפעלת הסים"
-            }
-            icon={<SimIcon />}
-          />
           <EditButton
+            handleClick={() =>
+              setOpenEditDialog({
+                type: "countries",
+                summary: selectedCountries.length
+                  ? `${selectedCountries.map(
+                      (c: SelectedCountryType) => c.label
+                    )}`
+                  : " ? לאן אתם נוסעים ",
+              })
+            }
+            summary={
+              selectedCountries.length
+                ? `${selectedCountries.map(
+                    (c: SelectedCountryType) => c.label
+                  )}`
+                : " ? לאן אתם נוסעים "
+            }
+            icon={<TravelIcon />}
+          />
+          {/* <EditButton
             handleClick={() => setOpenEditDialog("")}
             summary={
               simStartDate

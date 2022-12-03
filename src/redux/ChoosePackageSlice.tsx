@@ -5,7 +5,6 @@ import {
   SelectedCountryType,
 } from "../data/types";
 const initialState: InitialChoosePackageType = {
-  selectedCountries: [],
   availablePackages: [],
   loading: false,
 };
@@ -14,12 +13,6 @@ export const choosePackageSlice = createSlice({
   name: "choosePackage",
   initialState,
   reducers: {
-    setSelectedCountries: (
-      state: InitialChoosePackageType,
-      action: PayloadAction<SelectedCountryType>
-    ) => {
-      return { ...state, selectedCountries: action.payload };
-    },
     setAvailablePackages: (
       state: InitialChoosePackageType,
       action: PayloadAction<any>
@@ -34,6 +27,5 @@ export const choosePackageSlice = createSlice({
     },
   },
 });
-export const { setSelectedCountries, setAvailablePackages, setLoading } =
-  choosePackageSlice.actions;
+export const { setAvailablePackages, setLoading } = choosePackageSlice.actions;
 export default choosePackageSlice.reducer;

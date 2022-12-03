@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import Datepicker from "react-tailwindcss-datepicker";
-import { setSimStartDate } from "../../redux/api/SimActionsSlice";
+import { setSimStartDate } from "../../../redux/api/simActionsSlice";
+import { CloseModalButton } from "./CloseModalButton";
 
 export const EditDate: React.FC<{ closeDialog: () => void }> = ({
   closeDialog,
@@ -32,6 +33,7 @@ export const EditDate: React.FC<{ closeDialog: () => void }> = ({
           }}>
           שמור השינויים
         </button>
+        <CloseModalButton closeDialog={closeDialog} />
       </div>
     </>
   );

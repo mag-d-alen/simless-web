@@ -2,11 +2,12 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Action } from "@remix-run/router";
 import { ParsedUrlQuery } from "querystring";
 import StateManagedSelect from "react-select/dist/declarations/src/stateManager";
-import { InitialSimActionsState } from "../../data/types";
+import { InitialSimActionsState, SelectedCountriesType } from "../../data/types";
 
 const initialState: InitialSimActionsState = {
   simNumber: null,
   simStartDate: null,
+  selectedCountries:[],
 };
 export const simActionsSlice = createSlice({
   name: "simActions",
@@ -24,7 +25,13 @@ export const simActionsSlice = createSlice({
     ) => {
       return { ...state, simStartDate: action.payload };
     },
+    setSelectedCountries: (
+      state: InitialSimActionsState,
+      action: PayloadAction<SelectedCountriesType>
+    ) => {
+      return { ...state, selectedCountries: action.payload };
+    },
   },
 });
-export const { setSimNumber, setSimStartDate } = simActionsSlice.actions;
+export const { setSimNumber, setSimStartDate,setSelectedCountries } = simActionsSlice.actions;
 export default simActionsSlice.reducer;

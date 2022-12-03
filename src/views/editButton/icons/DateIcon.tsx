@@ -2,7 +2,7 @@ import React from "react";
 
 export const DateIcon = () => {
   return (
-    <div style={{ backgroundColor: "#A854F7", padding: "0.8rem", margin:0 }}>
+    <div className="rounded-lg p-5 bg-purple-500 ml-auto">
       <svg
         width="20"
         height="20"

@@ -8,7 +8,7 @@ import { contactApi } from "./api/contactApi";
 import { contactSlice } from "./ContactSlice";
 import { paymentApi } from "./api/paymentApi";
 import { invoiceApi } from "./api/invoiceApi";
-import { simActionsSlice } from "./api/SimActionsSlice";
+import { simActionsSlice } from "./api/simActionsSlice";
 
 const rootReducer = combineReducers({
   [simApi.reducerPath]: simApi.reducer,

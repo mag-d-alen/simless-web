@@ -23,7 +23,6 @@ export type InvoiceType = {
   oneForm?: boolean;
 };
 export type InitialChoosePackageType = {
-  selectedCountries?: SelectedCountryType | [];
   availablePackages?: any;
   loading?: boolean;
 };
@@ -36,8 +35,9 @@ export type InitialPackagesState = {
   chosenDeal: string[];
 };
 export type InitialSimActionsState = {
-  simNumber: number|null;
-  simStartDate: Date| null;
+  simNumber: number | null;
+  simStartDate: Date | null;
+  selectedCountries?: SelectedCountriesType | [];
 };
 export type InitialUserInfoType = {
   userSimNumber: string;
@@ -50,9 +50,11 @@ export type TopUpResponseType = {
   onum: string;
   orderid: number;
 };
-export type SelectedCountryType =
-  | MultiValue<{ value: string; label: string }>
-  | [];
+export type SelectedCountryType = {
+  label: string;
+  value: string;
+};
+export type SelectedCountriesType = MultiValue<SelectedCountryType> | [];
 export type AccordionItemType = { title: string; content: string }[];
 export type AccordionContentType = {
   accordionContent: AccordionItemType;

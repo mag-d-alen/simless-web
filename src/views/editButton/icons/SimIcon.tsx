@@ -2,7 +2,7 @@ import React from "react";
 
 export const SimIcon = () => {
   return (
-    <div style={{ backgroundColor: "#A854F7", padding: "0.8rem", margin: 0 }}>
+    <div className="rounded-lg p-5 bg-purple-500 ml-auto">
       <svg
         width="21"
         height="17"

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { SelectCountry } from "./selectCountry/SelectCountry";
-import { Typography } from "../home.styled";
+
+
 import { packages } from "../../../data/data";
 import { PackageCard } from "./packages/PackageCard";
 import { PackagesContainer } from "./packages/packages.styled";
@@ -25,7 +25,7 @@ export const PackagesMain: React.FC = () => {
   return (
     <>
       <div className="flex justify-center align-center">חפש לפי מדינה</div>
-      <SelectCountry />
+      {/* <SelectCountry /> */}
       {selectedCountries.length ? (
         <>
           <div className="flex justify-center align-center mb-8">
