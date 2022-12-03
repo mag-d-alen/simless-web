@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { setSimNumber } from "../../../redux/api/simActionsSlice";
+import { setSimNumber } from "../../../redux/SimActionsSlice";
 import { CloseModalButton } from "./CloseModalButton";
 
 export const EditSimNumber: React.FC<{ closeDialog: () => void }> = ({

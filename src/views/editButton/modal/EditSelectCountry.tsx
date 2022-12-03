@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import {
   SelectedCountriesType,
 } from "../../../data/types";
-import { setSelectedCountries } from "../../../redux/api/simActionsSlice";
+import { setSelectedCountries } from "../../../redux/SimActionsSlice";
 import { CloseModalButton } from "./CloseModalButton";
 import Select from "react-select";
 import { countriesList } from "../../../data/data";
