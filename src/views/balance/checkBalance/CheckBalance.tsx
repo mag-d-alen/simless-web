@@ -1,13 +1,9 @@
 import { Formik, Form } from "formik";
-import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { simApi, useGetSimBalanceQuery } from "../../../redux/api/simApi";
-import { store } from "../../../redux/store";
-import { setSimData, setUserSimNumber } from "../../../redux/UserInfoSlice";
+import { setUserSimNumber } from "../../../redux/UserInfoSlice";
+import { Button } from "../../editButton/modal/Button";
 import { CheckBalanceSchema } from "../../form/form data";
 import { FormEntry } from "../../form/FormEntry";
-import { Button } from "../../general.styled";
-
 
 export const CheckBalance = () => {
   const dispatch = useDispatch();
@@ -22,7 +18,11 @@ export const CheckBalance = () => {
         {({ errors, touched }) => (
           <Form>
             <FormEntry inputfield="sim" errors={errors} touched={touched} />
-            <Button type="submit">Check your balance</Button>
+            <Button
+              text="Check your balance"
+              handleClick={() => {}}
+              type="submit"
+            />
           </Form>
         )}
       </Formik>

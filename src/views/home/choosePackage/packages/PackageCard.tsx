@@ -2,7 +2,7 @@ import React, { FormEvent, useState } from "react";
 import { useDispatch } from "react-redux";
 import { setChosenDeal } from "../../../../redux/packagesSlice";
 import { setCheckoutStep } from "../../../../redux/TopUpSlice";
-import { Button } from "../../../general.styled";
+import { Button } from "../../../editButton/modal/Button";
 import { ChipIcon } from "./ChipIcon";
 import {
   PackageCardContainer,
@@ -57,12 +57,8 @@ export const PackageCard: React.FC<{
         </PackageCardBody>
         <PackageCardPrice>180 ש`ח</PackageCardPrice>
         <PackageCardButtons>
-          <Button id="pay" type="submit">
-            Checkout
-          </Button>
-          <Button id="cart" type="submit">
-            Add To Cart
-          </Button>
+          <Button text="checkout" type="submit" handleClick={() => {}} />
+          <Button text=" Add To Cart" type="submit" handleClick={() => {}} />
         </PackageCardButtons>
       </form>
     </PackageCardContainer>

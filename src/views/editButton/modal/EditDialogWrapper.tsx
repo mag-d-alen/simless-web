@@ -1,5 +1,8 @@
 import React, { useState } from "react";
+import { EditButton } from "../EditButton";
+import { EditData } from "./EditData";
 import { EditDate } from "./EditDate";
+import { EditMinutes } from "./EditMinutes";
 import { EditSelectCountry } from "./EditSelectCountry";
 import { EditSimNumber } from "./EditSimNumber";
 
@@ -14,12 +17,14 @@ export const EditDialogWrapper: React.FC<{
         {summary}
       </div>
 
-      <div className="modal-body relative p-4">
+      <div className="flex flex-col relative p-4 h-full">
         {dialogType === "number" && <EditSimNumber closeDialog={closeDialog} />}
         {dialogType === "date" && <EditDate closeDialog={closeDialog} />}
         {dialogType === "countries" && (
           <EditSelectCountry closeDialog={closeDialog} />
         )}
+        {dialogType === "minutes" && <EditMinutes closeDialog={closeDialog} />}
+        {dialogType === "data" && <EditData closeDialog={closeDialog} />}
       </div>
     </>
   );

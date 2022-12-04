@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "../general.styled";
 
 import { DialogBodyContainer, DialogContainer } from "./payment.styled";
 

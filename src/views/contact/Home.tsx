@@ -1,19 +1,11 @@
 import React, { useState } from "react";
-import { PaymentSteps } from "../payment/PaymentSteps";
-import { HomeContainer, Typography } from "./home.styled";
 import { useSelector } from "react-redux";
-import { PackagesMain } from "./choosePackage/PackagesMain";
-import { ProgressBar } from "../ProgressBar";
 import { EditButton } from "../editButton/EditButton";
 import { DateIcon } from "../editButton/icons/DateIcon";
 import { EditDialogWrapper } from "../editButton/modal/EditDialogWrapper";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { SimIcon } from "../editButton/icons/SimIcon";
-import { number } from "yup";
 import { TravelIcon } from "../editButton/icons/TravelIcon";
 import { SelectedCountryType } from "../../data/types";
-import { PhoneIcon } from "../editButton/icons/PhoneIcon";
-import { DataIcon } from "../editButton/icons/DataIcon";
 
 export const Home: React.FC = () => {
   const [openEditDialog, setOpenEditDialog] = useState<{
@@ -23,8 +15,9 @@ export const Home: React.FC = () => {
 
   // const chosenDeal = useSelector((s: any) => s.simPurchase.chosenDeal);
   // const checkoutStep = useSelector((s: any) => s.topUp.checkoutStep);
-  const { simNumber, simStartDate, selectedCountries, addedMinutes } =
-    useSelector((s: any) => s.simActions);
+  const { simNumber, simStartDate, selectedCountries } = useSelector(
+    (s: any) => s.simActions
+  );
 
   return (
     <>
@@ -79,23 +72,24 @@ export const Home: React.FC = () => {
             }
             icon={<TravelIcon />}
           />
-          <EditButton
-            handleClick={() =>
-              setOpenEditDialog({
-                type: "minutes",
-                summary: " ?הלו, אמא",
-              })
+          {/* <EditButton
+            handleClick={() => setOpenEditDialog("")}
+            summary={
+              simStartDate
+                ? `${simStartDate} תאריך הפעלת הסים`
+                : "תבחר תאריך הפעלת הסים"
             }
-            summary={" ?הלו, אמא"}
-            icon={<PhoneIcon />}
+            icon={<DateIcon />}
           />
           <EditButton
-            handleClick={() =>
-              setOpenEditDialog({ type: "data", summary: "add data" })
+            handleClick={() => setOpenEditDialog("")}
+            summary={
+              simStartDate
+                ? `${simStartDate} תארוך הפעלת הסים`
+                : "תבחר תארוך הפעלת הסים"
             }
-            summary={"add data"}
-            icon={<DataIcon />}
-          />
+            icon={<DateIcon />}
+          /> */}
         </div>
       ) : (
         <EditDialogWrapper

@@ -4,7 +4,7 @@ import React from "react";
 import { TopUpSchema } from "../../form/form data";
 import { FormEntry } from "../../form/FormEntry";
 import { useDispatch, useSelector } from "react-redux";
-import { Button } from "../../general.styled";
+
 import {
   setCheckoutStep,
   setTopUpSimAmount,
@@ -12,6 +12,7 @@ import {
 } from "../../../redux/TopUpSlice";
 import { StepProgress } from "./StepProgress";
 import { GoBack } from "./GoBack";
+import { Button } from "../../editButton/modal/Button";
 
 export const TopUpBalance: React.FC = () => {
   const dispatch = useDispatch();
@@ -34,7 +35,11 @@ export const TopUpBalance: React.FC = () => {
             <FormEntry inputfield="sim" errors={errors} touched={touched} />
             <FormEntry inputfield="amount" errors={errors} touched={touched} />
             {checkoutStep === 1 && (
-              <Button type="submit">Go to Invoice </Button>
+              <Button
+                type="submit"
+                handleClick={() => {}}
+                text="Go to Invoice"
+              />
             )}
           </Form>
         )}

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import { Button } from "../general.styled";
+import { Button } from "../editButton/modal/Button";
 import { PaymentDialog } from "./PaymentDialog";
 
 export const PaymentMain: React.FC = () => {
@@ -8,7 +8,7 @@ export const PaymentMain: React.FC = () => {
 
   return (
     <>
-      <Button onClick={() => setDialogOpen(true)}>Proceed to payment</Button>
+      <Button handleClick={() => setDialogOpen(true)} text="Proceed to Payment"/>
       {dialogOpen ? (
         <PaymentDialog isOpen={dialogOpen} close={() => setDialogOpen(false)} />
       ) : null}

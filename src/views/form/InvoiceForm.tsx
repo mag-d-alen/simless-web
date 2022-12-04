@@ -3,8 +3,9 @@ import React from "react";
 import { initialData, InvoiceSchema } from "./form data";
 import { InputLabel } from "./form.styled";
 import { FormEntry } from "./FormEntry";
-import { Button, Divider } from "../general.styled";
+import { Divider } from "../general.styled";
 import { InvoiceType } from "../../data/types";
+import { Button } from "../editButton/modal/Button";
 
 export const InvoiceForm: React.FC<{
   handleSubmit: (values: InvoiceType) => void;
@@ -71,7 +72,7 @@ export const InvoiceForm: React.FC<{
                 Use the same address for payment
               </InputLabel>
             ) : null}
-            <Button type="submit">Submit</Button>
+            <Button handleClick={() => { }} text="Submit" type="submit"/>
           </Form>
         )}
       </Formik>
