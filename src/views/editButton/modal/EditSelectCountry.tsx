@@ -12,7 +12,7 @@ export const EditSelectCountry: React.FC<{ closeDialog: () => void }> = ({
   const [countries, setCountries] = useState<SelectedCountriesType | []>([]);
   const dispatch = useDispatch();
   return (
-    <div className=" flex-column items-center justify-center">
+    <div className=" flex-column">
       <Select
         options={countriesList}
         isMulti={true}

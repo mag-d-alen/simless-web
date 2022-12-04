@@ -5,6 +5,7 @@ export const AccordionContainer = styled.main`
   flex-direction: column;
   height: 100%;
   padding: 2rem;
+  overflow: auto;
 `;
 export const AccordionInner = styled.div<{
   active: boolean;
@@ -20,7 +21,7 @@ export const AccordionTitle = styled.h3`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color:darkslategray;
+  color: darkslategray;
 `;
 
 export const AccordionContent = styled.div<{
