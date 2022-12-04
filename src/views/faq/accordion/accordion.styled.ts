@@ -6,6 +6,7 @@ export const AccordionContainer = styled.main`
   height: 100%;
   padding: 2rem;
   overflow: auto;
+  margin-bottom: 5rem;
 `;
 export const AccordionInner = styled.div<{
   active: boolean;
