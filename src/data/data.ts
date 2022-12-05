@@ -164,6 +164,9 @@
 //   { value: "234", label: " ,שייט בלב ים קבוצה 1 :" },
 //   { value: "239", label: " ,שייט בלב ים קבוצה 2 :" },
 //   { value: "219", label: " ,תאילנד " },
+
+import { CSSObject } from "@emotion/react";
+
 // ];
 export const countriesList = [
   { value: "IRL", label: "אירלנד" },
@@ -224,4 +227,9 @@ export const packages = [
       "Japan, Argentina, Denmark, Israel, England, Tailand, Japan, Argentina, Denmark, Israel",
     ],
   },
+];
+export const GBOptions = [
+  { value: "5G", label: "5G" },
+  { value: "3G", label: "3G" },
+  { value: "1G", label: "1G" },
 ];

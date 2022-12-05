@@ -13,8 +13,7 @@ export const EditSimNumber: React.FC<{ closeDialog: () => void }> = ({
   return (
     <>
       <input
-        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-        type="number"
+        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-purple-200 focus:shadow-outline"
         placeholder="מספר הסים"
         onChange={(e) => setUserInputNumber(e.target.value)}
       />
