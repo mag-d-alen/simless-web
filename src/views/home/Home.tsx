@@ -32,10 +32,12 @@ export const Home: React.FC = () => {
             handleClick={() =>
               setOpenEditDialog({
                 type: "number",
-                summary: simNumber ? `${simNumber} מספר סים` : "בחר מספר הסים",
+                summary: simNumber
+                  ? `${simNumber} מספר הסים`
+                  : "בחרו מספר הסים",
               })
             }
-            summary={simNumber ? `${simNumber} מספר הסים` : "בחר מספר סים"}
+            summary={simNumber ? `${simNumber} מספר הסים` : "בחרו מספר סים"}
             icon={<SimIcon />}
           />
           <EditButton
@@ -43,7 +45,7 @@ export const Home: React.FC = () => {
               setOpenEditDialog({
                 summary: simStartDate
                   ? `${simStartDate} תאריך הפעלת סים`
-                  : "בחר תאריך הפעלת הסים",
+                  : "בחרו תאריך הפעלת הסים",
 
                 type: "date",
               })
@@ -51,7 +53,7 @@ export const Home: React.FC = () => {
             summary={
               simStartDate
                 ? `${simStartDate} תאריך הפעלת הסים`
-                : "בחר תאריך הפעלת הסים"
+                : "בחרו תאריך הפעלת הסים"
             }
             icon={<DateIcon />}
           />

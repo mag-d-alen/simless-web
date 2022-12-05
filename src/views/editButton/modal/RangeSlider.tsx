@@ -6,7 +6,7 @@ export const RangeSlider: React.FC<{ setDollars: (sum: number) => void }> = ({
   return (
     <div className="flex-col align-center w-2/3 m-auto justify-center">
       <div className="flex justify-center align-center px-4 text-xs">
-        הוסחיף זמן אוויר
+        הוסף זמן אוויר
       </div>
       <div className="flex p-4">
         <div className="control-minus">0$</div>
@@ -31,7 +31,7 @@ export const RangeSlider: React.FC<{ setDollars: (sum: number) => void }> = ({
     "
           id="customRange1"
         />
-        <div title="increase" className="control-plus">
+        <div className="control-plus">
           50$
         </div>
       </div>
