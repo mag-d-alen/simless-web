@@ -7,7 +7,7 @@ import { SimIcon } from "../editButton/icons/SimIcon";
 import { TravelIcon } from "../editButton/icons/TravelIcon";
 import { SelectedCountryType } from "../../data/types";
 
-export const Home: React.FC = () => {
+export const HomeOld: React.FC = () => {
   const [openEditDialog, setOpenEditDialog] = useState<{
     type: string;
     summary: string;
@@ -35,6 +35,7 @@ export const Home: React.FC = () => {
             summary={simNumber ? `${simNumber} מספר הסים` : "תבחר מספר הסים"}
             icon={<SimIcon />}
           />
+
           <EditButton
             handleClick={() =>
               setOpenEditDialog({

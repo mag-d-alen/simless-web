@@ -1,10 +1,9 @@
 import React from "react";
 
 export const Button: React.FC<{
-  handleClick: () => void;
+  handleClick?: () => void;
   text?: string;
-  type?: "button" | "reset" | "submit";
-}> = ({ handleClick, text = "close", type = "button" }) => {
+  type?: "button" | "reset" | "submit"}> = ({ handleClick = () => {}, text = "close", type = "button" }) => {
   return (
     <div className="flex flex-1 self-center">
       <button

@@ -2,14 +2,11 @@ import React, { useState } from "react";
 import { PaymentSteps } from "../payment/PaymentSteps";
 import { HomeContainer, Typography } from "./home.styled";
 import { useSelector } from "react-redux";
-import { PackagesMain } from "./choosePackage/PackagesMain";
-import { ProgressBar } from "../ProgressBar";
+
 import { EditButton } from "../editButton/EditButton";
 import { DateIcon } from "../editButton/icons/DateIcon";
 import { EditDialogWrapper } from "../editButton/modal/EditDialogWrapper";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { SimIcon } from "../editButton/icons/SimIcon";
-import { number } from "yup";
 import { TravelIcon } from "../editButton/icons/TravelIcon";
 import { SelectedCountryType } from "../../data/types";
 import { PhoneIcon } from "../editButton/icons/PhoneIcon";
@@ -23,7 +20,7 @@ export const Home: React.FC = () => {
 
   // const chosenDeal = useSelector((s: any) => s.simPurchase.chosenDeal);
   // const checkoutStep = useSelector((s: any) => s.topUp.checkoutStep);
-  const { simNumber, simStartDate, selectedCountries, addedMinutes } =
+  const { simNumber, simStartDate, selectedCountries, addedMinutesinUSD } =
     useSelector((s: any) => s.simActions);
 
   return (
@@ -83,10 +80,16 @@ export const Home: React.FC = () => {
             handleClick={() =>
               setOpenEditDialog({
                 type: "minutes",
-                summary: " ?הלו, אמא",
+                summary: addedMinutesinUSD
+                  ? ` הוספת ${addedMinutesinUSD}$ זמן אוויר `
+                  : " ?הלו, אמא",
               })
             }
-            summary={" ?הלו, אמא"}
+            summary={
+              addedMinutesinUSD
+                ? ` הוספת ${addedMinutesinUSD}$ זמן אוויר `
+                : " ?הלו, אמא"
+            }
             icon={<PhoneIcon />}
           />
           <EditButton
@@ -107,12 +110,3 @@ export const Home: React.FC = () => {
     </>
   );
 };
-
-{
-  /* <ProgressBar value={ checkoutStep*25} />
-      {chosenDeal.length && checkoutStep > 1 ? (
-        <PaymentSteps />
-      ) : (
-        <PackagesMain />
-      )} */
-}

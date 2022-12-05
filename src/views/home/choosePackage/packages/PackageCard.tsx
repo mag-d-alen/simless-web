@@ -57,8 +57,8 @@ export const PackageCard: React.FC<{
         </PackageCardBody>
         <PackageCardPrice>180 ש`ח</PackageCardPrice>
         <PackageCardButtons>
-          <Button text="checkout" type="submit" handleClick={() => {}} />
-          <Button text=" Add To Cart" type="submit" handleClick={() => {}} />
+          <Button text="checkout" type="submit" />
+          <Button text=" Add To Cart" type="submit" />
         </PackageCardButtons>
       </form>
     </PackageCardContainer>
