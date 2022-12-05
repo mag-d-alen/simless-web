@@ -1,8 +1,8 @@
 import React, { FormEvent, useState } from "react";
 import { useDispatch } from "react-redux";
-import { setChosenDeal } from "../../../../redux/packagesSlice";
-import { setCheckoutStep } from "../../../../redux/TopUpSlice";
-import { Button } from "../../../editButton/modal/Button";
+import { setChosenDeal } from "../../../redux/packagesSlice";
+import { setCheckoutStep } from "../../../redux/TopUpSlice";
+import { Button } from "../../../views/editButton/modal/Button";
 import { ChipIcon } from "./ChipIcon";
 import {
   PackageCardContainer,

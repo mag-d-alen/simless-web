@@ -6,7 +6,7 @@ export const RangeSlider: React.FC<{ setDollars: (sum: number) => void }> = ({
   return (
     <div className="flex-col align-center w-2/3 m-auto justify-center">
       <div className="flex justify-center align-center px-4 text-xs">
-        הוסחיף זמן אוויר
+        הוסף זמן אוויר
       </div>
       <input
         onChange={(e) => setDollars(parseInt(e.target.value))}

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 
-import { packages } from "../../../data/data";
+import { packages } from "../../data/data";
 import { PackageCard } from "./packages/PackageCard";
 import { PackagesContainer } from "./packages/packages.styled";
 import { RangeSlider } from "./packages/addMinutes/RangeSlider";

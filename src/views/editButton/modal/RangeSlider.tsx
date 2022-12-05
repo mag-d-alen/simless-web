@@ -26,14 +26,12 @@ export const RangeSlider: React.FC<{ setDollars: (sum: number) => void }> = ({
       w-full
       bg-purple-200
       appearance-none
-      cursor-pointer dark:bg-gray-700
+      cursor-pointer 
       focus:outline-none focus:ring-0 focus:shadow-none
     "
           id="customRange1"
         />
-        <div className="control-plus">
-          50$
-        </div>
+        <div className="control-plus">50$</div>
       </div>
     </div>
   );
