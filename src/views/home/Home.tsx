@@ -32,12 +32,10 @@ export const Home: React.FC = () => {
             handleClick={() =>
               setOpenEditDialog({
                 type: "number",
-                summary: simNumber
-                  ? `${simNumber} מספר הסים`
-                  : "בחרו מספר הסים",
+                summary: simNumber ? `${simNumber} מספר הסים` : "בחרו מספר סים",
               })
             }
-            summary={simNumber ? `${simNumber} מספר הסים` : "בחרו מספר סים"}
+            summary={simNumber ? `${simNumber} מספר סים` : "בחרו מספר סים"}
             icon={<SimIcon />}
           />
           <EditButton
