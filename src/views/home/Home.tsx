@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { PaymentSteps } from "../payment/PaymentSteps";
-import { HomeContainer, Typography } from "./home.styled";
 import { useSelector } from "react-redux";
 
 import { EditButton } from "../editButton/EditButton";
@@ -18,10 +16,13 @@ export const Home: React.FC = () => {
     summary: string;
   } | null>(null);
 
-  // const chosenDeal = useSelector((s: any) => s.simPurchase.chosenDeal);
-  // const checkoutStep = useSelector((s: any) => s.topUp.checkoutStep);
-  const { simNumber, simStartDate, selectedCountries, addedMinutesinUSD } =
-    useSelector((s: any) => s.simActions);
+  const {
+    simNumber,
+    simStartDate,
+    selectedCountries,
+    addedMinutesinUSD,
+    addedData,
+  } = useSelector((s: any) => s.simActions);
 
   return (
     <>
@@ -94,9 +95,12 @@ export const Home: React.FC = () => {
           />
           <EditButton
             handleClick={() =>
-              setOpenEditDialog({ type: "data", summary: "add data" })
+              setOpenEditDialog({
+                type: "data",
+                summary: addedData ? `${addedData}G הוספת ` : " הוסיף דאטה",
+              })
             }
-            summary={"add data"}
+            summary={addedData ? `${addedData}G הוספת ` : " הוסיף דאטה"}
             icon={<DataIcon />}
           />
         </div>

@@ -39,6 +39,7 @@ export type InitialSimActionsState = {
   simStartDate: Date | null;
   selectedCountries?: SelectedCountriesType | [];
   addedMinutesinUSD: number;
+  addedData: number|null;
 };
 export type InitialUserInfoType = {
   userSimNumber: string;

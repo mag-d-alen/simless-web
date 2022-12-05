@@ -165,7 +165,6 @@
 //   { value: "239", label: " ,שייט בלב ים קבוצה 2 :" },
 //   { value: "219", label: " ,תאילנד " },
 
-import { CSSObject } from "@emotion/react";
 
 // ];
 export const countriesList = [
@@ -229,7 +228,7 @@ export const packages = [
   },
 ];
 export const GBOptions = [
-  { value: "5G", label: "5G" },
-  { value: "3G", label: "3G" },
-  { value: "1G", label: "1G" },
+  { value: 5, label: "5G" },
+  { value: 3, label: "3G" },
+  { value: 1, label: "1G" },
 ];

@@ -5,7 +5,8 @@ const initialState: InitialSimActionsState = {
   simNumber: null,
   simStartDate: null,
   selectedCountries: [],
-  addedMinutesinUSD : 0
+  addedMinutesinUSD: 0,
+  addedData: null,
 };
 export const simActionsSlice = createSlice({
   name: "simActions",
@@ -35,6 +36,10 @@ export const simActionsSlice = createSlice({
     ) => {
       return { ...state, addedMinutesinUSD: action.payload };
     },
+    setAddedData: (state: InitialSimActionsState,
+      action: PayloadAction<number>) => {
+      return {...state, addedData:action.payload}
+    }
   },
 });
 export const {
@@ -42,5 +47,6 @@ export const {
   setSimStartDate,
   setSelectedCountries,
   setAddedMinutesinUSD,
+  setAddedData
 } = simActionsSlice.actions;
 export default simActionsSlice.reducer;
