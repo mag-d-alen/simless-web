@@ -8,7 +8,7 @@ export const DisplayMinutes: React.FC<{ dollars: number }> = ({ dollars }) => {
       <div className="flex-col align-center ">
         <h1 className="flex justify-center text-2xl p-4">{dollars}$ הוספת </h1>;
         <h2 className="flex justify-center">
-          כל דולר הוא זמן שיחה במידנת היעד
+          כל דולר הוא זמן שיחה במדינת היעד
         </h2>
       </div>
     </label>
