@@ -23,10 +23,6 @@ export const EditSelectCountry: React.FC<{ closeDialog: () => void }> = ({
                   ? "grey"
                   : "rgba(168, 84, 247, 0.644)",
             }),
-            menu: (baseStyles, state) => ({
-              ...baseStyles,
-              background: "rgba(168, 84, 247, 0.307)",
-            }),
             option: (baseStyles, state) => ({
               ...baseStyles,
               background:
