@@ -12,7 +12,7 @@ export const EditSelectCountry: React.FC<{ closeDialog: () => void }> = ({
   const [countries, setCountries] = useState<SelectedCountriesType | []>([]);
   const dispatch = useDispatch();
   return (
-    <div className=" flex flex-col justify-center h-full">
+    <div className=" flex flex-1 flex-col justify-center h-full">
       <div className="w-100">
         <Select
           styles={{
