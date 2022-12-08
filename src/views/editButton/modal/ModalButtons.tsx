@@ -6,7 +6,7 @@ export const ModalButtons: React.FC<{
   clickHandler: () => void;
 }> = ({ closeDialog, clickHandler }) => {
   return (
-    <div className=" flex items-center justify-center border-t border-gray-200 rounded-b-md px-10 pb-40 mt-auto gap-4">
+    <div className="flex items-center p-6 space-x-2 ">
       <Button
         text={"שמור שינויים"}
         handleClick={() => {
@@ -14,7 +14,6 @@ export const ModalButtons: React.FC<{
           closeDialog();
         }}
       />
-      <Button handleClick={closeDialog} />
     </div>
   );
 };

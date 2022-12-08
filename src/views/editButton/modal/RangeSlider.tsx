@@ -19,7 +19,7 @@ export const RangeSlider: React.FC<{ setDollars: (sum: number) => void }> = ({
           defaultValue={0}
           className="
       form-range
-      accent-purple-500
+      accent-purple-600
       rounded-lg
       h-2
       px-0
