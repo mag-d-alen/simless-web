@@ -4,7 +4,6 @@ export const AccordionContainer = styled.main`
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 2rem;
   overflow: auto;
   margin-bottom: 5rem;
 `;

@@ -16,12 +16,9 @@ export const EditSelectCountry: React.FC<{ closeDialog: () => void }> = ({
       <div className="w-100">
         <Select
           styles={{
-            control: (baseStyles, state) => ({
+            control: (baseStyles) => ({
               ...baseStyles,
-              borderColor:
-                state.isFocused || state.menuIsOpen
-                  ? "grey"
-                  : "rgba(168, 84, 247, 0.644)",
+              borderColor: "rgba(168, 84, 247, 0.644)",
             }),
             option: (baseStyles, state) => ({
               ...baseStyles,

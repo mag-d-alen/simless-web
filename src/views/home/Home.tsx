@@ -5,10 +5,11 @@ import { EditButton } from "../editButton/EditButton";
 import { DateIcon } from "../editButton/icons/DateIcon";
 import { EditDialogWrapper } from "../editButton/modal/EditDialogWrapper";
 import { SimIcon } from "../editButton/icons/SimIcon";
-import { TravelIcon } from "../editButton/icons/TravelIcon";
 import { SelectedCountryType } from "../../data/types";
 import { PhoneIcon } from "../editButton/icons/PhoneIcon";
 import { DataIcon } from "../editButton/icons/DataIcon";
+import { EditSelectCountry } from "../editButton/modal/EditSelectCountry";
+import { SelectCountry } from "./SelectCountry";
 
 export const Home: React.FC = () => {
   const [openEditDialog, setOpenEditDialog] = useState<{
@@ -26,8 +27,9 @@ export const Home: React.FC = () => {
 
   return (
     <>
+      <SelectCountry />
       {!openEditDialog ? (
-        <div className="flex flex-col align-center  bg-gray-100 text-gray-700 ">
+        <div className="flex flex-col align-center overflowY-hidden bg-gray-100 text-gray-700 px-8">
           <EditButton
             handleClick={() =>
               setOpenEditDialog({
@@ -55,26 +57,7 @@ export const Home: React.FC = () => {
             }
             icon={<DateIcon />}
           />
-          <EditButton
-            handleClick={() =>
-              setOpenEditDialog({
-                type: "countries",
-                summary: selectedCountries.length
-                  ? `${selectedCountries.map(
-                      (c: SelectedCountryType) => c.label
-                    )}`
-                  : " ? לאן אתם נוסעים ",
-              })
-            }
-            summary={
-              selectedCountries.length
-                ? `${selectedCountries.map(
-                    (c: SelectedCountryType) => c.label
-                  )}`
-                : " ? לאן אתם נוסעים "
-            }
-            icon={<TravelIcon />}
-          />
+
           <EditButton
             handleClick={() =>
               setOpenEditDialog({
@@ -95,10 +78,12 @@ export const Home: React.FC = () => {
             handleClick={() =>
               setOpenEditDialog({
                 type: "data",
-                summary: addedData ? `${addedData}G הוספת ` : " הוסף דאטה",
+                summary: addedData
+                  ? `${addedData}G הוספתם `
+                  : " ?כמה תרצו לגלוש",
               })
             }
-            summary={addedData ? `${addedData}G הוספת ` : " הוסף דאטה"}
+            summary={addedData ? `${addedData}G הוספתם ` : " ?כמה תרצו לגלוש"}
             icon={<DataIcon />}
           />
         </div>

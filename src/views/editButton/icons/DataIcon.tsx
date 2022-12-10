@@ -2,7 +2,7 @@ import React from "react";
 
 export const DataIcon = () => {
   return (
-    <div className="rounded-lg p-5 bg-purple-500 ml-auto">
+    <div className="rounded-lg p-4 bg-purple-500 ml-auto">
       <svg
         width="20"
         height="20"

@@ -4,7 +4,7 @@ export const RangeSlider: React.FC<{ setDollars: (sum: number) => void }> = ({
   setDollars,
 }) => {
   return (
-    <div className="flex-col align-center w-2/3 m-auto justify-center">
+    <div className="flex-col align-center m-auto justify-center">
       <div className="flex justify-center align-center px-4 text-xs">
         הוסף זמן אוויר
       </div>

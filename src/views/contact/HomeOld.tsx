@@ -4,7 +4,6 @@ import { EditButton } from "../editButton/EditButton";
 import { DateIcon } from "../editButton/icons/DateIcon";
 import { EditDialogWrapper } from "../editButton/modal/EditDialogWrapper";
 import { SimIcon } from "../editButton/icons/SimIcon";
-import { TravelIcon } from "../editButton/icons/TravelIcon";
 import { SelectedCountryType } from "../../data/types";
 
 export const HomeOld: React.FC = () => {
@@ -71,7 +70,7 @@ export const HomeOld: React.FC = () => {
                   )}`
                 : " ? לאן אתם נוסעים "
             }
-            icon={<TravelIcon />}
+            icon={<DateIcon />}
           />
           {/* <EditButton
             handleClick={() => setOpenEditDialog("")}
