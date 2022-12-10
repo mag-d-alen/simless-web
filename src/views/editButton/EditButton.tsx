@@ -4,7 +4,8 @@ export const EditButton: React.FC<{
   handleClick: () => void;
   icon?: ReactNode;
   summary: string;
-}> = ({ handleClick, icon, summary }) => {
+  disabled?: boolean;
+}> = ({ handleClick, icon, summary, disabled = false }) => {
   return (
     <button
       type="button"

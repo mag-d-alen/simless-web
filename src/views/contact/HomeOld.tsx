@@ -23,6 +23,7 @@ export const HomeOld: React.FC = () => {
       {!openEditDialog ? (
         <div className="flex flex-col align-center  bg-gray-100 text-gray-700 ">
           <EditButton
+            disabled={!!selectedCountries.length}
             handleClick={() =>
               setOpenEditDialog({
                 type: "number",
@@ -36,6 +37,7 @@ export const HomeOld: React.FC = () => {
           />
 
           <EditButton
+            disabled={!!selectedCountries.length}
             handleClick={() =>
               setOpenEditDialog({
                 summary: simStartDate
@@ -53,6 +55,7 @@ export const HomeOld: React.FC = () => {
             icon={<DateIcon />}
           />
           <EditButton
+            disabled={!!selectedCountries.length}
             handleClick={() =>
               setOpenEditDialog({
                 type: "countries",
