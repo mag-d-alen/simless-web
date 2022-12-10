@@ -3,8 +3,9 @@ import { useDispatch } from "react-redux";
 import { SelectedCountriesType } from "../../../data/types";
 import { setSelectedCountries } from "../../../redux/SimActionsSlice";
 import Select from "react-select";
-import { countriesList } from "../../../data/data";
+
 import { ModalButtons } from "./ModalButtons";
+import { countriesNamesList } from "../../../data/list_iso3166_a3";
 
 export const EditSelectCountry: React.FC<{ closeDialog: () => void }> = ({
   closeDialog,
@@ -30,7 +31,7 @@ export const EditSelectCountry: React.FC<{ closeDialog: () => void }> = ({
                   : "white",
             }),
           }}
-          options={countriesList}
+          options={countriesNamesList}
           isMulti={true}
           onChange={(selected) => {
             setCountries(selected);

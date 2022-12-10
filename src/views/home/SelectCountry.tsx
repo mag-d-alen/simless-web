@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { InputActionMeta } from "react-select";
 import Select from "react-select";
-import { countriesList } from "../../data/data";
+import { countriesNamesList } from "../../data/list_iso3166_a3";
 import { SelectedCountriesType } from "../../data/types";
 import { setSelectedCountries } from "../../redux/SimActionsSlice";
 import { Button } from "../editButton/modal/Button";
@@ -28,7 +27,7 @@ export const SelectCountry = () => {
                 : "white",
           }),
         }}
-        options={countriesList}
+        options={countriesNamesList}
         isMulti={true}
         onChange={(selected) => {
           setCountries(selected);
