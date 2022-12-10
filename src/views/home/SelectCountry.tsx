@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Select from "react-select";
 import { countriesNamesList } from "../../data/list_iso3166_a3";
-import { SelectedCountriesType } from "../../data/types";
+import {
+  InitialSimActionsState,
+  SelectedCountriesType,
+} from "../../data/types";
 import { setSelectedCountries } from "../../redux/SimActionsSlice";
 import { Button } from "../editButton/modal/Button";
 
 export const SelectCountry = () => {
-  const [countries, setCountries] = useState<SelectedCountriesType | []>([]);
   const dispatch = useDispatch();
-  useEffect(() => {
-    if (!countries.length) dispatch(setSelectedCountries(countries));
-  }, [countries]);
+
+  const { selectedCountries } = useSelector((s: any) => s.simActions);
 
   return (
     <div className="flex flex-col justify-center px-8 mx-1 mt-4 mb-6">
@@ -33,19 +34,17 @@ export const SelectCountry = () => {
         }}
         options={countriesNamesList}
         isMulti={true}
-        onChange={(selected) => {
-          setCountries(selected);
-        }}
+        onChange={(selected) => dispatch(setSelectedCountries(selected))}
       />
-
-      <div className="flex my-10">
-        <Button
-          handleClick={() => {
-            countries.length && dispatch(setSelectedCountries(countries));
-          }}
-          text=" בחר מדינת היעד"
-        />
+      <div
+        className="flex content-center justify-center
+      x">
+        sim will be used in :
       </div>
+      {selectedCountries.length
+        ? selectedCountries.map((c: any) => <p key={c.value}>{c.label}</p>)
+        : null}
+      <div className="flex my-10"></div>
     </div>
   );
 };
