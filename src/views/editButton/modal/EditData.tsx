@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import Select, { SingleValue } from "react-select";
-import { GBOptions } from "../../../data/data";
+import { useDispatch, useSelector } from "react-redux";
 import { setAddedData } from "../../../redux/SimActionsSlice";
 import { ModalButtons } from "./ModalButtons";
 
@@ -9,43 +7,28 @@ export const EditData: React.FC<{
   closeDialog: () => void;
 }> = ({ closeDialog }) => {
   const dispatch = useDispatch();
-  const [gbSelected, setGbSelected] = useState<SingleValue<{
-    value: number;
-    label: string;
-  }> | null>(null);
-
+  const [gbSelected, setGbSelected] = useState<number | null>(null);
+  const { selectedCountries } = useSelector((s: any) => s.simActions);
   return (
     <>
-      <Select
-        styles={{
-          control: (baseStyles, state) => ({
-            ...baseStyles,
-            borderColor:
-              state.isFocused || state.menuIsOpen
-                ? "grey"
-                : "rgba(168, 84, 247, 0.644)",
-          }),
-          option: (baseStyles, state) => ({
-            ...baseStyles,
-            background:
-              state.isSelected || state.isFocused
-                ? state.isSelected
-                  ? "rgba(168, 84, 247, 0.644)"
-                  : "rgba(168, 84, 247, 0.213)"
-                : "white",
-          }),
-        }}
-        options={GBOptions}
-        isMulti={false}
-        onChange={(selected) => {
-          setGbSelected(selected);
-        }}
-      />
+      {selectedCountries.length ? (
+        <div className="flex flex-col mb-4 ">
+          <h2 className="flex text-md justify-center uppercase text-purple-600">
+            :תוכלו להישתמש בשים ב
+          </h2>
+
+          {selectedCountries.map((c: any) => (
+            <span key={c.value} className="flex text-sm justify-center ">
+              {c.label}
+            </span>
+          ))}
+        </div>
+      ) : null}
 
       <ModalButtons
         closeDialog={closeDialog}
         clickHandler={() => {
-          if (gbSelected) dispatch(setAddedData(gbSelected.value));
+          if (gbSelected) dispatch(setAddedData(gbSelected));
         }}
       />
     </>
