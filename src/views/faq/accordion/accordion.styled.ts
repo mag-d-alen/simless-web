@@ -6,7 +6,7 @@ export const AccordionContainer = styled.main`
   overflow: auto;
   margin-bottom: 5rem;
   background: white;
-  border-radius: 0.3rem;
+  width: 100%;
   padding-top: 1rem;
   margin: 0.5rem;
   height: 100%;
