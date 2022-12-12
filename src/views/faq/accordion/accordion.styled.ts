@@ -34,5 +34,5 @@ export const AccordionContent = styled.div<{
   padding: ${({ active }) => (active ? "0 1rem 1rem 1rem" : "0 1rem ")};
   margin: 0;
   overflow: hidden;
-  border-bottom: 0.03rem solid slategray;
+  border-bottom: 0.03rem solid #a854f7;
 `;

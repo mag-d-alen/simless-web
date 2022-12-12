@@ -6,32 +6,35 @@ import { FormTextArea } from "../form/FormTextArea";
 import { splitAndCapitalize } from "../../data/splitAndCapitalize";
 import { ContactFormInputType } from "../../data/types";
 import { Button } from "../editButton/modal/Button";
+import { FormMainContainer } from "../form/form.styled";
 
 export const ContactForm: React.FC<{
   handleSubmit: (values: ContactFormInputType) => void;
   status: "Sending..." | "Submit";
 }> = ({ handleSubmit, status }) => {
   return (
-    <Formik
-      initialValues={{ name: "", email: "", message: "", phone: "" }}
-      validationSchema={ContactSchema}
-      onSubmit={(values, { resetForm }) => {
-        handleSubmit(values);
-        resetForm();
-      }}>
-      {({ errors, touched }) => (
-        <Form>
-          <FormEntry inputfield={"name"} errors={errors} touched={touched} />
-          <FormEntry inputfield={"email"} errors={errors} touched={touched} />
-          <FormEntry inputfield={"phone"} errors={errors} touched={touched} />
-          <FormTextArea name={"message"} />
-          <Button
-            text={splitAndCapitalize(status)}
-            type="submit"
-            handleClick={() => {}}
-          />
-        </Form>
-      )}
-    </Formik>
+    <FormMainContainer>
+      <Formik
+        initialValues={{ name: "", email: "", message: "", phone: "" }}
+        validationSchema={ContactSchema}
+        onSubmit={(values, { resetForm }) => {
+          handleSubmit(values);
+          resetForm();
+        }}>
+        {({ errors, touched }) => (
+          <Form>
+            <FormEntry inputfield={"name"} errors={errors} touched={touched} />
+            <FormEntry inputfield={"email"} errors={errors} touched={touched} />
+            <FormEntry inputfield={"phone"} errors={errors} touched={touched} />
+            <FormTextArea name={"message"} />
+            <Button
+              text={splitAndCapitalize(status)}
+              type="submit"
+              handleClick={() => {}}
+            />
+          </Form>
+        )}
+      </Formik>
+    </FormMainContainer>
   );
 };

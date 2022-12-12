@@ -21,11 +21,12 @@ export const FormEntryContainer = styled.div`
   font-size: smaller;
   align-items: center;
   width: 100%;
+  background: white;
+  padding: 1rem;
 `;
 export const InputContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
   align-self: flex-start;
   gap: 3rem;
   width: 100%;
@@ -34,10 +35,10 @@ export const InputField = styled(Field)`
   display: flex;
   flex: 1;
   align-items: center;
-  background-color: aliceblue;
+  background-color: #edebfe;
   border: none;
   border-radius: 0.3rem;
-  margin: 0.5rem;
+  margin-bottom: 0.5rem;
   padding: 0.3rem;
 `;
 export const FormFieldContainer = styled.div`
@@ -71,13 +72,12 @@ export const FormStyledTextArea = styled.textarea`
   display: flex;
   text-overflow: clip;
   flex: 1;
-  background-color: aliceblue;
+  background-color: #edebfe;
   border: none;
   border-radius: 0.3rem;
-  margin: 0.5rem;
-  padding: 0.5rem;
-  width: 20rem;
+  width: 100%;
   height: 5rem;
   overflow: auto;
   font-family: "Lato";
+  margin: ;
 `;

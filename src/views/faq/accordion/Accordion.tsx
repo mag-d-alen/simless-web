@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import { faqData } from "../../../data/data";
+import { ChevronDown } from "../../editButton/icons/ChevronDown";
 
 import {
   AccordionContainer,
@@ -22,7 +23,7 @@ export const Accordion: React.FC = () => {
                 : setCurrentAccordion(i);
             }}>
             {datum.title}
-            <span>{currentAccordion !== i ? "+" : "-"}</span>
+            <span>{currentAccordion !== i ? <ChevronDown /> : "-"}</span>
           </AccordionTitle>
           <AccordionContent active={currentAccordion === i}>
             {datum.content}
