@@ -20,7 +20,6 @@ export const TopUpBalance: React.FC = () => {
 
   return (
     <>
-      <StepProgress />
       {checkoutStep > 1 && <GoBack />}
       <Formik
         initialValues={{ sim: "", amount: "" }}

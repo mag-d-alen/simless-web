@@ -23,6 +23,7 @@ export const FormEntryContainer = styled.div`
   width: 100%;
   background: white;
   padding: 1rem;
+  position: relative;
 `;
 export const InputContainer = styled.div`
   display: flex;
@@ -43,7 +44,6 @@ export const InputField = styled(Field)`
 `;
 export const FormFieldContainer = styled.div`
   display: flex;
-  flex-direction: column;
   flex: 3;
 `;
 
@@ -51,6 +51,7 @@ export const PhoneContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  gap: 0.5rem;
 `;
 export const ErrorAlert = styled.div`
   background-color: white;
@@ -62,6 +63,9 @@ export const ErrorAlert = styled.div`
   margin: -0.5rem 0.5rem 0.5rem 0.5rem;
   text-transform: uppercase;
   font-weight: 600;
+  position: absolute;
+  bottom: -0.5rem;
+  right: 1rem;
 `;
 export const InvoiceTitle = styled.h3`
   text-align: center;
