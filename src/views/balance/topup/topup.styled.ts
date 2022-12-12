@@ -5,6 +5,9 @@ export const TopUpMainContainer = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  background: white;
+  border-radius: 0.3rem;
+  padding: 1rem;
 `;
 
 export const BalanceMainContainer = styled.div`
@@ -12,7 +15,10 @@ export const BalanceMainContainer = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  margin-top: 2rem;
+  margin-top: 0.5rem;
+  background: white;
+  border-radius: 0.3rem;
+  padding: 1rem;
 `;
 
 export const ProgressContainer = styled.div`

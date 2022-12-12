@@ -5,6 +5,9 @@ export const FormMainContainer = styled.div`
   display: flex;
   flex-direction: center;
   flex-direction: column;
+  background: white;
+  border-radius: 0.3rem;
+  padding: 1rem;
 `;
 
 export const InputLabel = styled.div`
@@ -24,6 +27,7 @@ export const FormEntryContainer = styled.div`
   background: white;
   padding: 1rem;
   position: relative;
+  border-radius: 0.3rem;
 `;
 export const InputContainer = styled.div`
   display: flex;
@@ -39,7 +43,6 @@ export const InputField = styled(Field)`
   background-color: #edebfe;
   border: none;
   border-radius: 0.3rem;
-  margin-bottom: 0.5rem;
   padding: 0.3rem;
 `;
 export const FormFieldContainer = styled.div`
@@ -83,5 +86,4 @@ export const FormStyledTextArea = styled.textarea`
   height: 5rem;
   overflow: auto;
   font-family: "Lato";
-  margin: ;
 `;

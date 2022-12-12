@@ -8,10 +8,7 @@ export const TopUpMain: React.FC = () => {
   const checkoutStep = useSelector((s: any) => s.topUp.checkoutStep);
   return (
     <TopUpMainContainer>
-      <TopupTopBar>
-        {checkoutStep === 1 && <TopUpBalance />}
-        {checkoutStep > 1 && <PaymentSteps />}
-      </TopupTopBar>
+      <TopupTopBar>{checkoutStep === 1 && <TopUpBalance />}</TopupTopBar>
     </TopUpMainContainer>
   );
 };
