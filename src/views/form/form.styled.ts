@@ -8,11 +8,11 @@ export const FormMainContainer = styled.div`
   background: white;
   border-radius: 0.3rem;
   padding: 1rem;
+  width: 100%;
 `;
 
 export const InputLabel = styled.div`
   display: flex;
-  padding-left: 2rem;
   font-size: smaller;
   flex: 1;
   text-transform: uppercase;

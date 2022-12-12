@@ -5,11 +5,12 @@ export const AccordionContainer = styled.main`
   flex-direction: column;
   overflow: auto;
   margin-bottom: 5rem;
+  margin-top: 0.5rem;
   background: white;
   width: 100%;
   padding-top: 1rem;
-  margin: 0.5rem;
   height: 100%;
+  border-radius: 0.3rem;
 `;
 export const AccordionInner = styled.div<{
   active: boolean;
