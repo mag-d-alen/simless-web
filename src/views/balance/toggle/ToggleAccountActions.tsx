@@ -8,7 +8,7 @@ export const ToggleAccountActions: React.FC<{
 }> = ({ handleToggle, isCheckOn }) => {
   return (
     <>
-      <ToggleContainer>
+      <div className="flex justify-center items-center">
         <ToggleLabel active={isCheckOn}>Check balance</ToggleLabel>
         <div
           onClick={() => {
@@ -17,7 +17,7 @@ export const ToggleAccountActions: React.FC<{
           <ToggleBalance right={!isCheckOn} />
         </div>
         <ToggleLabel active={!isCheckOn}>top up your account</ToggleLabel>
-      </ToggleContainer>
+      </div>
     </>
   );
 };

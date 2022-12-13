@@ -34,11 +34,7 @@ export const TopUpBalance: React.FC = () => {
             <FormEntry inputfield="sim" errors={errors} touched={touched} />
             <FormEntry inputfield="amount" errors={errors} touched={touched} />
             {checkoutStep === 1 && (
-              <Button
-                type="submit"
-                handleClick={() => {}}
-                text="Go to Invoice"
-              />
+              <Button type="submit" text="Go to Invoice" />
             )}
           </Form>
         )}

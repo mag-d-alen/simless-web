@@ -13,6 +13,7 @@ export const SelectCountry: React.FC = () => {
             control: (baseStyles) => ({
               ...baseStyles,
               borderColor: "#a854f7",
+              padding: "12px 6px",
             }),
             option: (baseStyles, state) => ({
               ...baseStyles,
@@ -24,6 +25,7 @@ export const SelectCountry: React.FC = () => {
                   : "white",
             }),
           }}
+          placeholder={"?לאן אתם נוסעים"}
           options={countriesNamesList}
           isMulti={true}
           onChange={(selected) => dispatch(setSelectedCountries(selected))}

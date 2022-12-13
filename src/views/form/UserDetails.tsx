@@ -33,13 +33,15 @@ export const UserDetails: React.FC = () => {
     }
   };
   return (
-    <FormMainContainer>
+    <div className=" flex flex-col self-center bg-white rounded p-4 w-full lg:w-3/4 overflow-auto mb-10 pb-8 relative">
       {showPaymentForm ? (
-        <InvoiceTitle>Fill in the payment information details</InvoiceTitle>
+        <h3 className="text-center uppercase mb-8">
+          Fill in the payment information details
+        </h3>
       ) : (
-        <InvoiceTitle>Fill in the Invoice Form</InvoiceTitle>
+        <h3 className="text-center uppercase mb-8">Fill in the Invoice Form</h3>
       )}
       <InvoiceForm oneForm={!showPaymentForm} handleSubmit={handleSubmit} />
-    </FormMainContainer>
+    </div>
   );
 };

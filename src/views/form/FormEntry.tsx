@@ -1,13 +1,6 @@
 import React from "react";
 import { splitAndCapitalize } from "../../data/splitAndCapitalize";
-import {
-  ErrorAlert,
-  FormEntryContainer,
-  FormFieldContainer,
-  InputContainer,
-  InputLabel,
-  PhoneContainer,
-} from "./form.styled";
+import { ErrorAlert } from "./form.styled";
 import { FormField } from "./FormField";
 import Select from "react-select";
 import { countriesList } from "../../data/data";
@@ -20,15 +13,20 @@ export const FormEntry: React.FC<{
   setValues?: any;
 }> = ({ inputfield, errors, touched, values, setValues }) => {
   return (
-    <FormEntryContainer>
-      <InputContainer>
-        <InputLabel>{splitAndCapitalize(inputfield)}</InputLabel>
-        <FormFieldContainer>
+    <div className="flex justify-center w-full flex-wrap mb-6">
+      <div className="w-full px-3">
+        <label
+          className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+          htmlFor="grid-first-name">
+          {splitAndCapitalize(inputfield)}
+        </label>
+        <div className="flex justify-center content-center  ">
           {inputfield === "sim" || inputfield === "country" ? (
             inputfield === "sim" ? (
-              <PhoneContainer>
-                +372 <FormField name={inputfield} type={inputfield} />{" "}
-              </PhoneContainer>
+              <div className="flex gap-4 items-center flex-1">
+                +372
+                <FormField name={inputfield} type={inputfield} />{" "}
+              </div>
             ) : (
               <Select
                 name={inputfield}
@@ -44,8 +42,8 @@ export const FormEntry: React.FC<{
           {errors[inputfield] && touched[inputfield] ? (
             <ErrorAlert>{errors[inputfield]}</ErrorAlert>
           ) : null}
-        </FormFieldContainer>
-      </InputContainer>
-    </FormEntryContainer>
+        </div>
+      </div>
+    </div>
   );
 };

@@ -11,13 +11,13 @@ export const FormMainContainer = styled.div`
   width: 100%;
 `;
 
-export const InputLabel = styled.div`
-  display: flex;
-  font-size: smaller;
-  flex: 1;
-  text-transform: uppercase;
-  gap: 1rem;
-`;
+// export const InputLabel = styled.div`
+//   display: flex;
+//   font-size: smaller;
+//   flex: 1;
+//   text-transform: uppercase;
+//   gap: 1rem;
+// `;
 export const FormEntryContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -78,12 +78,13 @@ export const InvoiceTitle = styled.h3`
 export const FormStyledTextArea = styled.textarea`
   display: flex;
   text-overflow: clip;
-  flex: 1;
-  background-color: #edebfe;
-  border: none;
+  border-color: #a854f7;
   border-radius: 0.3rem;
-  width: 100%;
+  min-width: 80%;
   height: 5rem;
   overflow: auto;
   font-family: "Lato";
+  :focus {
+    border-color: #a854f7;
+  }
 `;

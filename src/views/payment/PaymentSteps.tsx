@@ -9,7 +9,7 @@ export const PaymentSteps: React.FC = () => {
   const { checkoutStep, payment } = useSelector((s: any) => s.topUp);
   return (
     <>
-      {checkoutStep > 1 && <GoBack />}
+      {/* {checkoutStep > 1 && <GoBack />} */}
       {checkoutStep === 2 ? (
         <UserDetails />
       ) : null}

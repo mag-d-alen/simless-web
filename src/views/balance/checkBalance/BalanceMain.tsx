@@ -16,16 +16,18 @@ export const BalanceMain: React.FC = () => {
     setIsCheckOn(!isCheckOn);
   };
   return (
-    <BalanceMainContainer>
+    <div className="flex flex-col flex-wrap justify-center gap-4 p-4 w-full">
       <ToggleAccountActions handleToggle={handleToggle} isCheckOn={isCheckOn} />
       {!isCheckOn ? (
         <TopUpMain />
       ) : (
         <>
           <CheckBalance />
-            {userSimNumber ? <DisplayBalance userSimNumber={ userSimNumber} /> : null}
+          {userSimNumber ? (
+            <DisplayBalance userSimNumber={userSimNumber} />
+          ) : null}
         </>
       )}
-    </BalanceMainContainer>
+    </div>
   );
 };

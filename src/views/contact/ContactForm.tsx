@@ -13,7 +13,7 @@ export const ContactForm: React.FC<{
   status: "Sending..." | "Submit";
 }> = ({ handleSubmit, status }) => {
   return (
-    <FormMainContainer>
+    <div className="flex content-center flex-col bg-white p-4 w-full rounded">
       <Formik
         initialValues={{ name: "", email: "", message: "", phone: "" }}
         validationSchema={ContactSchema}
@@ -35,6 +35,6 @@ export const ContactForm: React.FC<{
           </Form>
         )}
       </Formik>
-    </FormMainContainer>
+    </div>
   );
 };

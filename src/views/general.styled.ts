@@ -2,17 +2,17 @@ import styled from "styled-components";
 
 export const ToggleButton = styled.div<{ right: boolean }>`
   display: flex;
-  filter: drop-shadow(0.1rem 0.3rem 0.1rem rgba(0, 0, 0, 0.1));
-  background-color: aliceblue;
+  background-color: white;
   display: flex;
   width: 5rem;
   height: 1.5rem;
   border-radius: 1rem;
+  margin: 0 0.5rem;
 `;
 
 export const ToggleZip = styled.div<{ right: boolean }>`
   display: flex;
-  background-color: #00008b82;
+  background-color: #7e3af2;
   height: 1.5rem;
   border-radius: 1rem;
   width: 50%;

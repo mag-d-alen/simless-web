@@ -3,7 +3,7 @@ import { Home } from "./views/home/Home";
 import { Routes, Route } from "react-router-dom";
 import { Navbar } from "./views/navbar/Navbar";
 import { FAQ } from "./views/faq/FAQ";
-import { ContactMain } from "./views/contact/ContactMain";
+import { ContactMain } from "./views/contact/ContactWrapper";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import { BalanceMain } from "./views/balance/checkBalance/BalanceMain";

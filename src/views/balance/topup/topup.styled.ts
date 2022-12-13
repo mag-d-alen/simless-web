@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
-export const TopUpMainContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  background: white;
-  border-radius: 0.3rem;
-  padding: 1rem;
-`;
+// export const TopUpMainContainer = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   gap: 1rem;
+//   background: white;
+//   border-radius: 0.3rem;
+//   padding: 1rem;
+// `;
 
 export const BalanceMainContainer = styled.div`
   display: flex;
