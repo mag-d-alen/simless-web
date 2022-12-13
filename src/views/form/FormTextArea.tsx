@@ -10,7 +10,7 @@ export const FormTextArea = (props: FieldHookConfig<any>) => {
   const [field, meta] = useField(props);
   return (
     <FormEntryContainer
-      className=" flex items-center justify-center w-full "
+      className=" flex items-center justify-center w-full relative"
       {...field}
       {...props}>
       <textarea

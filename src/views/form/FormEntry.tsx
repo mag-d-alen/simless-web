@@ -20,12 +20,12 @@ export const FormEntry: React.FC<{
           htmlFor="grid-first-name">
           {splitAndCapitalize(inputfield)}
         </label>
-        <div className="flex justify-center content-center  ">
+        <div className="flex justify-center content-center relative  ">
           {inputfield === "sim" || inputfield === "country" ? (
             inputfield === "sim" ? (
               <div className="flex gap-4 items-center flex-1">
                 +372
-                <FormField name={inputfield} type={inputfield} />{" "}
+                <FormField name={inputfield} type={inputfield} />
               </div>
             ) : (
               <Select
