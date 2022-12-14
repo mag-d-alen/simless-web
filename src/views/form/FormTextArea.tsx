@@ -11,7 +11,9 @@ export const FormTextArea = (props: FieldHookConfig<any>) => {
   return (
     <FormEntryContainer className=" flex items-center justify-center w-full relative">
       <Field
-        className="flex border  border-purple-100 rounded-lg w-full overflow-auto p-4 resize focus: border-purple-600"
+        component="textarea"
+        rows="6"
+        className="inline-block border p-4 text-xs border-purple-100 rounded-lg w-full overflow-wrap p-4 resize border-purple-200 focus:ring-purple-500 focus:border-purple-500"
         style={{ fontFamily: "Lato", fontSize: "2rem" }}
         {...field}
         {...props}></Field>
