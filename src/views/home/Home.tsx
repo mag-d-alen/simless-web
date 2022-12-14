@@ -13,27 +13,26 @@ export const Home: React.FC = () => {
 
   return (
     <div>
-      {!openEditDialog ? (
-        <>
-          {showToast ? (
-            <Toast
-              text={"בחרו את מדינת היעד"}
-              closeToast={() => setShowToast(false)}
-            />
-          ) : null}
-          <SelectCountry />
-          <EditButtons
-            showToast={setShowToast}
-            openEditDialog={setOpenEditDialog}
+      <>
+        {showToast ? (
+          <Toast
+            text={"בחרו את מדינת היעד"}
+            closeToast={() => setShowToast(false)}
           />
-        </>
-      ) : (
+        ) : null}
+        <SelectCountry />
+        <EditButtons
+          showToast={setShowToast}
+          openEditDialog={setOpenEditDialog}
+        />
+      </>
+      {openEditDialog ? (
         <EditDialogs
           dialogType={openEditDialog.type}
           summary={openEditDialog.summary}
           closeDialog={() => setOpenEditDialog(null)}
         />
-      )}
+      ) : null}
     </div>
   );
 };

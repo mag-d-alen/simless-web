@@ -18,8 +18,6 @@ export const EditButtons: React.FC<{
     addedMinutesinUSD,
     addedData,
   } = useSelector((s: any) => s.simActions);
-  
-
 
 
   return (
