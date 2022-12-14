@@ -9,14 +9,12 @@ import {
 export const FormTextArea = (props: FieldHookConfig<any>) => {
   const [field, meta] = useField(props);
   return (
-    <FormEntryContainer
-      className=" flex items-center justify-center w-full relative"
-      {...field}
-      {...props}>
-      <textarea
-        className="flex border self-center border-purple-100 rounded-lg w-full overflow-auto h-40 focus: border-purple-600"
-        style={{ fontFamily: "Lato" }}
-      />
+    <FormEntryContainer className=" flex items-center justify-center w-full relative">
+      <Field
+        className="flex border  border-purple-100 rounded-lg w-full overflow-auto p-4 resize focus: border-purple-600"
+        style={{ fontFamily: "Lato", fontSize: "2rem" }}
+        {...field}
+        {...props}></Field>
       {meta.touched && meta.error ? (
         <ErrorAlert>{meta.error}</ErrorAlert>
       ) : null}
