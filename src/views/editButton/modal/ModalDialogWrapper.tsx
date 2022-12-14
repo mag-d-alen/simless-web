@@ -21,7 +21,9 @@ export const ModalDialogWrapper: React.FC<{
             <h3 className="text-xl p-4 font-medium text-gray-900 dark:text-white">
               {title}
             </h3>
-            <div className="flex mt-4">{children}</div>
+            <div className="flex w-full items-center justify-center mt-4">
+              {children}
+            </div>
           </div>
         </div>
       </div>

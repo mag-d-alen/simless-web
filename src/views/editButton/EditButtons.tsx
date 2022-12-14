@@ -14,7 +14,6 @@ export const EditButtons: React.FC<{
   const {
     simNumber,
     simStartDate,
-    selectedCountries,
     addedMinutesinUSD,
     addedData,
   } = useSelector((s: any) => s.simActions);

@@ -15,7 +15,7 @@ export const EditDialogs: React.FC<{
 }> = ({ closeDialog, dialogType = "", summary = "" }) => {
   return (
     <ModalDialogWrapper title={summary} closeDialog={closeDialog}>
-      <div className="p-6 space-y-6">
+      <div className="py-4 px-8 w-full">
         {dialogType === "number" && <EditSimNumber closeDialog={closeDialog} />}
         {dialogType === "date" && <EditDate closeDialog={closeDialog} />}
         {dialogType === "countries" && (
