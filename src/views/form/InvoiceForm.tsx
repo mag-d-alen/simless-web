@@ -19,10 +19,9 @@ export const InvoiceForm: React.FC<{
         resetForm();
       }}>
       {({ errors, touched, values, setValues }) => (
-        <Form className="flex flex-col flex-wrap mb-16 w-full ">
-          <GoBack />
+        <Form className="flex flex-col flex-wrap w-full ">
           {oneForm ? (
-            <div className="flex text-sm uppercase gap-4 px-8 pb-8">
+            <div className="flex text-xs uppercase gap-4 px-8  mb-4 text-gray-500">
               <Field type="checkbox" name="oneForm" inputfield={"oneForm"} />
               Use the same address for payment
             </div>

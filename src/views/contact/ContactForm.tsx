@@ -13,7 +13,7 @@ export const ContactForm: React.FC<{
   status: "Sending..." | "Submit";
 }> = ({ handleSubmit, status }) => {
   return (
-    <div className="flex content-center flex-col bg-white p-4 w-full rounded">
+    <div className="flex content-center flex-col bg-white p-4 mt-2 w-full rounded">
       <Formik
         initialValues={{ name: "", email: "", message: "", phone: "" }}
         validationSchema={ContactSchema}

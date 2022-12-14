@@ -30,7 +30,6 @@ export const EditDate: React.FC<{ closeDialog: () => void }> = ({
         onChange={handleValueChange}
       />
       <ModalButtons
-        closeDialog={closeDialog}
         clickHandler={() => {
           value && dispatch(setSimStartDate(value.startDate));
           closeDialog();

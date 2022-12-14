@@ -39,7 +39,6 @@ export const EditSelectCountry: React.FC<{ closeDialog: () => void }> = ({
         />
       </div>
       <ModalButtons
-        closeDialog={closeDialog}
         clickHandler={() => {
           countries.length && dispatch(setSelectedCountries(countries));
           closeDialog();

@@ -12,13 +12,13 @@ export const EditMinutes: React.FC<{ closeDialog: () => void }> = ({
   const [dollars, setDollars] = useState<number>(0);
   return (
     <>
-      <div className="flex-col">
-        <RangeSlider setDollars={setDollars} />
-        <DisplayMinutes dollars={dollars} />
-      </div>
+      <RangeSlider setDollars={setDollars} />
+      <DisplayMinutes dollars={dollars} />
       <ModalButtons
-        closeDialog={closeDialog}
-        clickHandler={() => dispatch(setAddedMinutesinUSD(dollars))}
+        clickHandler={() => {
+          dispatch(setAddedMinutesinUSD(dollars));
+          closeDialog();
+        }}
       />
     </>
   );

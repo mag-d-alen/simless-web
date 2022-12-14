@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { EditDialogWrapper } from "../editButton/modal/EditDialogWrapper";
+import { EditDialogs } from "../editButton/modal/EditDialogs";
 import { SelectCountry } from "./SelectCountry";
 import { Toast } from "../editButton/icons/Toast";
 import { EditButtons } from "../editButton/EditButtons";
@@ -8,27 +8,27 @@ export const Home: React.FC = () => {
   const [openEditDialog, setOpenEditDialog] = useState<{
     type: string;
     summary: string;
-  } | null>(null)
+  } | null>(null);
   const [showToast, setShowToast] = useState(false);
 
   return (
-    <div className="flex content-center flex-col bg-white p-4 w-full rounded mt-2">
-      <SelectCountry />
+    <div>
       {!openEditDialog ? (
         <>
           {showToast ? (
             <Toast
-              text={"חבר מדינת היעד"}
+              text={"בחרו את מדינת היעד"}
               closeToast={() => setShowToast(false)}
             />
           ) : null}
+          <SelectCountry />
           <EditButtons
             showToast={setShowToast}
             openEditDialog={setOpenEditDialog}
           />
         </>
       ) : (
-        <EditDialogWrapper
+        <EditDialogs
           dialogType={openEditDialog.type}
           summary={openEditDialog.summary}
           closeDialog={() => setOpenEditDialog(null)}

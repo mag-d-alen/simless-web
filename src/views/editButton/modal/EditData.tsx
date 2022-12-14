@@ -26,9 +26,9 @@ export const EditData: React.FC<{
       ) : null}
 
       <ModalButtons
-        closeDialog={closeDialog}
         clickHandler={() => {
           if (gbSelected) dispatch(setAddedData(gbSelected));
+          closeDialog();
         }}
       />
     </>

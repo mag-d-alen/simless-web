@@ -22,7 +22,7 @@ export const EditSimNumber: React.FC<{ closeDialog: () => void }> = ({
           userInputNumber && dispatch(setSimNumber(parseInt(userInputNumber)));
           closeDialog();
         }}
-        closeDialog={closeDialog}></ModalButtons>
+      ></ModalButtons>
     </>
   );
 };

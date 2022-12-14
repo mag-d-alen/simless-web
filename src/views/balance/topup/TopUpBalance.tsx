@@ -10,7 +10,6 @@ import {
   setTopUpSimAmount,
   setTopUpSimNumber,
 } from "../../../redux/TopUpSlice";
-import { StepProgress } from "./StepProgress";
 import { GoBack } from "./GoBack";
 import { Button } from "../../editButton/modal/Button";
 

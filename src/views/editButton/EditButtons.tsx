@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { EditButton } from "./EditButton";
 import { DataIcon } from "./icons/DataIcon";
@@ -9,6 +9,7 @@ import { SimIcon } from "./icons/SimIcon";
 export const EditButtons: React.FC<{
   showToast: (val: boolean) => void;
   openEditDialog: (val: { type: string; summary: string }) => void;
+
 }> = ({ showToast, openEditDialog }) => {
   const {
     simNumber,
@@ -17,31 +18,33 @@ export const EditButtons: React.FC<{
     addedMinutesinUSD,
     addedData,
   } = useSelector((s: any) => s.simActions);
+  
+
+
+
   return (
     <div className="flex flex-col align-center overflowY-hidden mt-4 py-4 text-gray-700 px-8">
       <EditButton
+        showToast={showToast}
         handleClick={() =>
-          !selectedCountries.length
-            ? showToast(true)
-            : openEditDialog({
-                type: "number",
-                summary: simNumber ? `${simNumber} מספר הסים` : "בחרו מספר סים",
-              })
+          openEditDialog({
+            type: "number",
+            summary: simNumber ? `${simNumber} מספר הסים` : "בחרו מספר סים",
+          })
         }
         summary={simNumber ? `${simNumber} מספר סים` : "בחרו מספר סים"}
         icon={<SimIcon />}
       />
       <EditButton
+        showToast={showToast}
         handleClick={() =>
-          !selectedCountries.length
-            ? showToast(true)
-            : openEditDialog({
-                summary: simStartDate
-                  ? `${simStartDate} תאריך הפעלת סים`
-                  : "בחרו תאריך הפעלת הסים",
+          openEditDialog({
+            summary: simStartDate
+              ? `${simStartDate} תאריך הפעלת סים`
+              : "בחרו תאריך הפעלת הסים",
 
-                type: "date",
-              })
+            type: "date",
+          })
         }
         summary={
           simStartDate
@@ -52,17 +55,15 @@ export const EditButtons: React.FC<{
       />
 
       <EditButton
-        disabled={!selectedCountries.length}
-        handleClick={() => {
-          !selectedCountries.length
-            ? showToast(true)
-            : openEditDialog({
-                type: "minutes",
-                summary: addedMinutesinUSD
-                  ? ` הוספת ${addedMinutesinUSD}$ זמן אוויר `
-                  : " ?הלו, אמא",
-              });
-        }}
+        showToast={showToast}
+        handleClick={() =>
+          openEditDialog({
+            type: "minutes",
+            summary: addedMinutesinUSD
+              ? ` הוספת ${addedMinutesinUSD}$ זמן אוויר `
+              : " ?הלו, אמא",
+          })
+        }
         summary={
           addedMinutesinUSD
             ? ` הוספת ${addedMinutesinUSD}$ זמן אוויר `
@@ -71,16 +72,13 @@ export const EditButtons: React.FC<{
         icon={<PhoneIcon />}
       />
       <EditButton
-        handleClick={() => {
-          !selectedCountries.length
-            ? showToast(true)
-            : openEditDialog({
-                type: "data",
-                summary: addedData
-                  ? `${addedData}G הוספתם `
-                  : " ?כמה תרצו לגלוש",
-              });
-        }}
+        showToast={showToast}
+        handleClick={() =>
+          openEditDialog({
+            type: "data",
+            summary: addedData ? `${addedData}G הוספתם ` : " ?כמה תרצו לגלוש",
+          })
+        }
         summary={addedData ? `${addedData}G הוספתם ` : " ?כמה תרצו לגלוש"}
         icon={<DataIcon />}
       />
