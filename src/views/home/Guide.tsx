@@ -9,10 +9,6 @@ import {
   guide_step_three1,
   guide_step_two1,
 } from "../../assets/text";
-import { Number1 } from "./Number1";
-import { Number2 } from "./Number2";
-import { Number3 } from "./Number3";
-import { Number4 } from "./Number4";
 
 export const Guide = () => {
   return (
@@ -26,20 +22,14 @@ export const Guide = () => {
           <Step1 />
         </div>
         <div className="flex flex-col wrap justify-center ">
-          <p className="font-semibold">
-            <Number1 />
-            {guide_step_one1}
-          </p>
+          <p className="font-semibold">{guide_step_one1}</p>
           <p>{guide_step_one1}</p>
           <p>{guide_step_one1}</p>
         </div>
       </div>
       <div className="flex justify-around my-8">
         <div className="flex flex-col wrap justify-center ">
-          <p className="font-semibold">
-            <Number2 />
-            {guide_step_two1}
-          </p>
+          <p className="font-semibold">{guide_step_two1}</p>
           <p>{guide_step_two1}</p>
           <p>{guide_step_two1}</p>
         </div>
@@ -53,20 +43,14 @@ export const Guide = () => {
         </div>
 
         <p className="flex flex-col wrap justify-center ">
-          <p className="font-semibold">
-            <Number3 />
-            {guide_step_three1}
-          </p>
+          <p className="font-semibold">{guide_step_three1}</p>
           <p>{guide_step_three1}</p>
           <p>{guide_step_three1}</p>
         </p>
       </div>
       <div className="flex justify-around my-8">
         <div className="flex flex-col wrap justify-center ">
-          <p className="font-semibold">
-            <Number4 />
-            {guide_step_four1}
-          </p>
+          <p className="font-semibold">{guide_step_four1}</p>
 
           <p>{guide_step_four1}</p>
           <p>{guide_step_four1}</p>
