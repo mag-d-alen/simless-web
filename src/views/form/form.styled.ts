@@ -11,13 +11,6 @@ export const FormMainContainer = styled.div`
   width: 100%;
 `;
 
-// export const InputLabel = styled.div`
-//   display: flex;
-//   font-size: smaller;
-//   flex: 1;
-//   text-transform: uppercase;
-//   gap: 1rem;
-// `;
 export const FormEntryContainer = styled.div`
   display: flex;
   flex-direction: column;

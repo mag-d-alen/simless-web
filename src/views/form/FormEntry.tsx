@@ -4,6 +4,7 @@ import { ErrorAlert } from "./form.styled";
 import { FormField } from "./FormField";
 import Select from "react-select";
 import { countriesList } from "../../data/data";
+import { getHebrewVersion } from "../../data/getHebrewVersion";
 const handleChange = () => {};
 export const FormEntry: React.FC<{
   inputfield: string;
@@ -16,9 +17,9 @@ export const FormEntry: React.FC<{
     <div className="flex justify-center w-full flex-wrap mb-6">
       <div className="w-full px-3">
         <label
-          className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+          className="flex justify-end mr-1 tracking-wide text-gray-700 text-xs font-bold mb-2"
           htmlFor="grid-first-name">
-          {splitAndCapitalize(inputfield)}
+          {getHebrewVersion(inputfield)}
         </label>
         <div className="flex justify-center content-center relative  ">
           {inputfield === "sim" || inputfield === "country" ? (

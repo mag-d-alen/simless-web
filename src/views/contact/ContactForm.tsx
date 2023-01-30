@@ -7,10 +7,11 @@ import { splitAndCapitalize } from "../../data/splitAndCapitalize";
 import { ContactFormInputType } from "../../data/types";
 import { Button } from "../editButton/modal/Button";
 import { FormMainContainer } from "../form/form.styled";
+import { getHebrewVersion } from "../../data/getHebrewVersion";
 
 export const ContactForm: React.FC<{
   handleSubmit: (values: ContactFormInputType) => void;
-  status: "Sending..." | "Submit";
+  status: "sending" | "submit";
 }> = ({ handleSubmit, status }) => {
   return (
     <div className="flex content-center flex-col bg-white p-4 mt-2 w-full rounded">
@@ -20,6 +21,7 @@ export const ContactForm: React.FC<{
         onSubmit={(values, { resetForm }) => {
           handleSubmit(values);
           resetForm();
+          
         }}>
         {({ errors, touched }) => (
           <Form>
@@ -28,9 +30,8 @@ export const ContactForm: React.FC<{
             <FormEntry inputfield={"phone"} errors={errors} touched={touched} />
             <FormTextArea name={"message"} />
             <Button
-              text={splitAndCapitalize(status)}
+              text={getHebrewVersion(status)}
               type="submit"
-              handleClick={() => {}}
             />
           </Form>
         )}

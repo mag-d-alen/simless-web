@@ -1,5 +1,3 @@
-
-
 export const faqData = [
   {
     title: "Item 1",
@@ -46,7 +44,11 @@ export const packages = [
   {
     name: "package1", // string
     countries: ["IRL", "RO", "SUE"], //string[] However, to display we would need to map the code names onto display names. so optionally:
-    countriesData :[ { value: "IRL", label: "אירלנד" },{ value: "CH", label: "שוויץ" },{ value: "RO", label: "רומניה" },],
+    countriesData: [
+      { value: "IRL", label: "אירלנד" },
+      { value: "CH", label: "שוויץ" },
+      { value: "RO", label: "רומניה" },
+    ],
     gb: 9, //number
   },
   {
@@ -55,11 +57,12 @@ export const packages = [
   },
   {
     name: "package3",
-    countries: [
-      "RO",
-      "IRL",
-     "IL"
-    ],
+    countries: ["RO", "IRL", "IL"],
   },
 ];
 
+export const hebrewVersion = {
+  email: "אמייל",
+  name: "",
+  sim: "מספר הטלפון",
+};
