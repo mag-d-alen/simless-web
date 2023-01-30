@@ -1,24 +1,22 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
-import { userInfoSlice } from "./UserInfoSlice";
-import { choosePackageSlice } from "./ChoosePackageSlice";
-import { packagesSlice } from "./packagesSlice";
+import { CheckBalanceSlice } from "./CheckBalanceSlice";
 import { topUpSlice } from "./TopUpSlice";
-import { simApi } from "./api/simApi";
+import { checkAndTopUpSimApi } from "./api/checkAndTopUpSimApi";
 import { contactApi } from "./api/contactApi";
 import { contactSlice } from "./ContactSlice";
-import { paymentApi } from "./api/paymentApi";
+import { orderSimApi } from "./api/orderSimApi";
 import { invoiceApi } from "./api/invoiceApi";
 import { simActionsSlice } from "./SimActionsSlice";
+import { packagesApi } from "./api/packagesApi";
 
 const rootReducer = combineReducers({
-  [simApi.reducerPath]: simApi.reducer,
+  [checkAndTopUpSimApi.reducerPath]: checkAndTopUpSimApi.reducer,
   [contactApi.reducerPath]: contactApi.reducer,
-  [paymentApi.reducerPath]: paymentApi.reducer,
+  [orderSimApi.reducerPath]: orderSimApi.reducer,
   [invoiceApi.reducerPath]: invoiceApi.reducer,
+  [packagesApi.reducerPath]: packagesApi.reducer,
 
-  choosePackage: choosePackageSlice.reducer,
-  userInfo: userInfoSlice.reducer,
-  simPurchase: packagesSlice.reducer,
+  checkBalance: CheckBalanceSlice.reducer,
   topUp: topUpSlice.reducer,
   contactUs: contactSlice.reducer,
   simActions: simActionsSlice.reducer,
@@ -28,10 +26,11 @@ export const store = configureStore({
   reducer: rootReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware()
-      .concat(simApi.middleware)
+      .concat(checkAndTopUpSimApi.middleware)
       .concat(contactApi.middleware)
-      .concat(paymentApi.middleware)
-      .concat(invoiceApi.middleware),
+      .concat(orderSimApi.middleware)
+      .concat(invoiceApi.middleware)
+      .concat(packagesApi.middleware),
 });
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;

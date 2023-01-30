@@ -1,5 +1,5 @@
 import React from "react";
-import { useGetSimBalanceQuery } from "../../../redux/api/simApi";
+import { useGetSimBalanceQuery } from "../../../redux/api/checkAndTopUpSimApi";
 import { Loader } from "../../Loader";
 
 import { BalanceDisplayContainer } from "./checkBalance.styled";

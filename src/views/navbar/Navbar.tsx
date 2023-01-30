@@ -23,7 +23,6 @@ export const Navbar = () => {
           manage your sim
         </span>
       </Link>
-     
     </nav>
   );
 };

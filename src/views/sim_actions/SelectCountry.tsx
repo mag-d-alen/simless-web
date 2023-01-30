@@ -1,11 +1,10 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import Select from "react-select";
 import { countriesNamesList } from "../../data/list_iso3166_a3";
 import { setSelectedCountries } from "../../redux/SimActionsSlice";
 
 export const SelectCountry: React.FC = () => {
   const dispatch = useDispatch();
-  const { selectedCountries} = useSelector((s:any)=>s.simActions)
   return (
     <div className="flex flex-col justify-center px-8 mx-1 mt-4">
       <div className="mb-4">

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useCreateInvoiceMutation } from "../../redux/api/invoiceApi";
-import { resetChosenDeal } from "../../redux/packagesSlice";
+// import { resetChosenDeal } from "../../redux/packagesSlice";
 import {
   setCheckoutStep,
   resetUserInvoiceInfo,
@@ -24,7 +24,7 @@ export const PaymentResult: React.FC = () => {
           setIsOpen(false);
           createInvoice({});
           dispatch(setCheckoutStep(1));
-          dispatch(resetChosenDeal(""));
+          // dispatch(resetChosenDeal(""));
           dispatch(resetUserInvoiceInfo(null));
           dispatch(resetUserPaymentInfo(null));
         }}>

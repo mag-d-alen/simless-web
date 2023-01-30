@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import { useGetSimBalanceQuery } from "../../../redux/api/simApi";
+import { useGetSimBalanceQuery } from "../../../redux/api/checkAndTopUpSimApi";
 import { Loader } from "../../Loader";
 import { CheckBalance } from "./CheckBalance";
 import { DisplayBalance } from "./DisplayBalance";
 import { ToggleAccountActions } from "../toggle/ToggleAccountActions";
-import { BalanceMainContainer } from "../topup/topup.styled";
 import { TopUpMain } from "../topup/TopUpMain";
 
 export const BalanceMain: React.FC = () => {

@@ -2,12 +2,13 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { InitialSimActionsState, SelectedCountriesType } from "../data/types";
 
 const initialState: InitialSimActionsState = {
-  simNumber: null,
-  simStartDate: null,
-  selectedCountries: [],
-  addedMinutesinUSD: 0,
-  addedData: null,
+    simNumber: null,
+    simStartDate: null,
+    selectedCountries: [],
+    addedMinutesinUSD: 0,
+    chosenPackage: null
 };
+
 export const simActionsSlice = createSlice({
   name: "simActions",
   initialState,
@@ -36,10 +37,10 @@ export const simActionsSlice = createSlice({
     ) => {
       return { ...state, addedMinutesinUSD: action.payload };
     },
-    setAddedData: (state: InitialSimActionsState,
-      action: PayloadAction<number>) => {
-      return {...state, addedData:action.payload}
-    }
+    setChosenPackage: (state: InitialSimActionsState,
+      action: PayloadAction<any>) => {
+      return {...state, chosenPackage:action.payload}
+      }
   },
 });
 export const {
@@ -47,6 +48,5 @@ export const {
   setSimStartDate,
   setSelectedCountries,
   setAddedMinutesinUSD,
-  setAddedData
 } = simActionsSlice.actions;
 export default simActionsSlice.reducer;

@@ -16,7 +16,7 @@ const initialState: InitialUserInfoType = {
 
 export type mainReducer = typeof initialState;
 
-export const userInfoSlice = createSlice({
+export const CheckBalanceSlice = createSlice({
   name: "userInfo",
   initialState,
   reducers: {
@@ -34,5 +34,5 @@ export const userInfoSlice = createSlice({
     },
   },
 });
-export const { setUserSimNumber, setSimData } = userInfoSlice.actions;
-export default userInfoSlice.reducer;
+export const { setUserSimNumber, setSimData } = CheckBalanceSlice.actions;
+export default CheckBalanceSlice.reducer;

@@ -23,10 +23,10 @@ export const Footer = () => (
         צור קשר
       </span>
     </Link>
-    <Link to="/balance">
+    {/* <Link to="/balance">
       <span className=" text-xs flex bg-white  p-3 rounded-md text-gray-600 border-gray-600 hover:bg-purple-100 hover:text-purple-600 hover:border-gray-900">
         manage your sim
       </span>
-    </Link>
+    </Link> */}
   </footer>
 );

@@ -1,6 +1,6 @@
 import { Formik, Form } from "formik";
 import { useDispatch } from "react-redux";
-import { setUserSimNumber } from "../../../redux/UserInfoSlice";
+import { setUserSimNumber } from "../../../redux/CheckBalanceSlice";
 import { Button } from "../../editButton/modal/Button";
 import { CheckBalanceSchema } from "../../form/form data";
 import { FormEntry } from "../../form/FormEntry";

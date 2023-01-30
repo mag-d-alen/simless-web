@@ -38,8 +38,8 @@ export type InitialSimActionsState = {
   simNumber: number | null;
   simStartDate: Date | null;
   selectedCountries?: SelectedCountriesType | [];
-  addedMinutesinUSD: number;
-  addedData: number|null;
+  addedMinutesinUSD?: number;
+  chosenPackage?: any | null;
 };
 export type InitialUserInfoType = {
   userSimNumber: string;
