@@ -1,29 +1,36 @@
-import React, { useState } from "react";
-import { AddAnimation } from "../../../stylingComponents/AddAnimation";
-import { CloseDialogIcon } from "../icons/CloseDialogIcon";
+import React, { useEffect, } from "react";
 import { EditData } from "./EditData";
 import { EditDate } from "./EditDate";
 import { EditMinutes } from "./EditMinutes";
 import { EditSelectCountry } from "./EditSelectCountry";
 import { EditSimNumber } from "./EditSimNumber";
 import { ModalDialogWrapper } from "./ModalDialogWrapper";
+import { useSelector } from "react-redux";
 
 export const EditDialogs: React.FC<{
   closeDialog: () => void;
   dialogType?: string;
   summary?: string;
 }> = ({ closeDialog, dialogType = "", summary = "" }) => {
+
   return (
-    <ModalDialogWrapper title={summary} closeDialog={closeDialog}>
-      <div className="py-4 px-8 w-full">
-        {dialogType === "number" && <EditSimNumber closeDialog={closeDialog} />}
-        {dialogType === "date" && <EditDate closeDialog={closeDialog} />}
-        {dialogType === "countries" && (
-          <EditSelectCountry closeDialog={closeDialog} />
-        )}
-        {dialogType === "minutes" && <EditMinutes closeDialog={closeDialog} />}
-        {dialogType === "data" && <EditData closeDialog={closeDialog} />}
-      </div>
-    </ModalDialogWrapper>
+    <>
+      <ModalDialogWrapper title={summary} closeDialog={closeDialog}>
+        <div className="py-4 px-8 w-full">
+          {dialogType === "number" && (
+            <EditSimNumber closeDialog={closeDialog} />
+          )}
+          {dialogType === "date" && <EditDate closeDialog={closeDialog} />}
+          {dialogType === "countries" && (
+            <EditSelectCountry closeDialog={closeDialog} />
+          )}
+          {dialogType === "minutes" && (
+            <EditMinutes closeDialog={closeDialog} />
+          )}
+          {dialogType === "data" && <EditData closeDialog={closeDialog} />}
+        </div>
+      </ModalDialogWrapper>
+   
+    </>
   );
 };

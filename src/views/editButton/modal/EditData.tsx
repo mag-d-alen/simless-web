@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { ModalButtons } from "./ModalButtons";
 import { useGetPackagesQuery } from "../../../redux/api/packagesApi";
 import { AvailablePackages } from "../../availablePackages/AvailablePackages";
+import { setChosenPackage } from "../../../redux/SimActionsSlice";
 
 export const EditData: React.FC<{
   closeDialog: () => void;
@@ -11,9 +12,6 @@ export const EditData: React.FC<{
   const [packageSelected, setPackageSelected] = useState<number | null>(null);
   const { selectedCountries } = useSelector((s: any) => s.simActions);
   const { isLoading } = useGetPackagesQuery(selectedCountries);
-  function setAddedData(packageSelected: number): any {
-    throw new Error("Function not implemented.");
-  }
 
   return (
     <>
@@ -34,7 +32,7 @@ export const EditData: React.FC<{
 
       <ModalButtons
         clickHandler={() => {
-          if (packageSelected) dispatch(setAddedData(packageSelected));
+          if (packageSelected) dispatch(setChosenPackage(packageSelected));
           closeDialog();
         }}
       />

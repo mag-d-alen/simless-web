@@ -6,11 +6,15 @@ import Select from "react-select";
 
 import { ModalButtons } from "./ModalButtons";
 import { countriesNamesList } from "../../../data/list_iso3166_a3";
+import { useSelector } from "react-redux";
 
 export const EditSelectCountry: React.FC<{ closeDialog: () => void }> = ({
   closeDialog,
 }) => {
-  const [countries, setCountries] = useState<SelectedCountriesType | []>([]);
+  const { selectedCountries } = useSelector((s: any) => s.simActions);
+  const [countries, setCountries] = useState<SelectedCountriesType | []>(
+    selectedCountries
+  );
   const dispatch = useDispatch();
   return (
     <div className=" flex flex-1 flex-col justify-center h-full">
@@ -31,6 +35,7 @@ export const EditSelectCountry: React.FC<{ closeDialog: () => void }> = ({
                   : "white",
             }),
           }}
+          value={countries}
           options={countriesNamesList}
           isMulti={true}
           onChange={(selected) => {
@@ -41,6 +46,7 @@ export const EditSelectCountry: React.FC<{ closeDialog: () => void }> = ({
       <ModalButtons
         clickHandler={() => {
           countries.length && dispatch(setSelectedCountries(countries));
+          setCountries([]);
           closeDialog();
         }}
       />

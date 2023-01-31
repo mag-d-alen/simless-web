@@ -1,23 +1,31 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { EditButton } from "./EditButton";
 import { DataIcon } from "./icons/DataIcon";
 import { DateIcon } from "./icons/DateIcon";
 import { PhoneIcon } from "./icons/PhoneIcon";
 import { SimIcon } from "./icons/SimIcon";
+import { Button } from "./modal/Button";
+import { useDispatch } from "react-redux";
+import { resetSimOrder, setSimOrder } from "../../redux/SimActionsSlice";
+import { orderSimApi } from "../../redux/api/orderSimApi";
 
 export const EditButtons: React.FC<{
   showToast: (val: boolean) => void;
   openEditDialog: (val: { type: string; summary: string }) => void;
-
 }> = ({ showToast, openEditDialog }) => {
-  const {
-    simNumber,
-    simStartDate,
-    addedMinutesinUSD,
-    addedData,
-  } = useSelector((s: any) => s.simActions);
+  const dispatch = useDispatch();
+  const [addedSim, setAddedSim] = useState(false);
+  const { simNumber, simStartDate, addedMinutesInUSD, chosenPackage } =
+    useSelector((s: any) => s.simActions);
 
+  const addSimOrder = () => {
+    dispatch(
+      setSimOrder({ simNumber, simStartDate, addedMinutesInUSD, chosenPackage })
+    );
+    dispatch(resetSimOrder(true));
+    setAddedSim(!addedSim);
+  };
 
   return (
     <div className="flex flex-col align-center overflowY-hidden mt-4 py-4 text-gray-700 px-8">
@@ -56,14 +64,14 @@ export const EditButtons: React.FC<{
         handleClick={() =>
           openEditDialog({
             type: "minutes",
-            summary: addedMinutesinUSD
-              ? ` הוספת ${addedMinutesinUSD}$ זמן אוויר `
+            summary: addedMinutesInUSD
+              ? ` הוספת ${addedMinutesInUSD}$ זמן אוויר `
               : " ?הלו, אמא",
           })
         }
         summary={
-          addedMinutesinUSD
-            ? ` הוספת ${addedMinutesinUSD}$ זמן אוויר `
+          addedMinutesInUSD
+            ? ` הוספת ${addedMinutesInUSD}$ זמן אוויר `
             : " ?הלו, אמא"
         }
         icon={<PhoneIcon />}
@@ -73,12 +81,30 @@ export const EditButtons: React.FC<{
         handleClick={() =>
           openEditDialog({
             type: "data",
-            summary: addedData ? `${addedData}G הוספתם ` : " ?כמה תרצו לגלוש",
+            summary: chosenPackage
+              ? `${chosenPackage}G הוספתם `
+              : " ?כמה תרצו לגלוש",
           })
         }
-        summary={addedData ? `${addedData}G הוספתם ` : " ?כמה תרצו לגלוש"}
+        summary={
+          chosenPackage ? `${chosenPackage}G הוספתם ` : " ?כמה תרצו לגלוש"
+        }
         icon={<DataIcon />}
       />
+
+      <div className="flex items-center w-full p-6 space-x-2 ">
+        {addedSim ? (
+          <>
+            <Button text="add another sim" handleClick={addSimOrder} />
+            <Button
+              text="go to checkout"
+              handleClick={() => dispatch(resetSimOrder(true))}
+            />
+          </>
+        ) : simStartDate?.length ? (
+          <Button text="add sim" handleClick={addSimOrder} />
+        ) : null}
+      </div>
     </div>
   );
 };

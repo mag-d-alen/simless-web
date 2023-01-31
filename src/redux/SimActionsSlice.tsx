@@ -1,12 +1,17 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { InitialSimActionsState, SelectedCountriesType } from "../data/types";
+import { createNextState, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import {
+  InitialSimActionsState,
+  SelectedCountriesType,
+  SimOrder,
+} from "../data/types";
 
 const initialState: InitialSimActionsState = {
-    simNumber: null,
-    simStartDate: null,
-    selectedCountries: [],
-    addedMinutesinUSD: 0,
-    chosenPackage: null
+  simNumber: null,
+  simStartDate: null,
+  selectedCountries: [],
+  addedMinutesInUSD: 0,
+  chosenPackage: null,
+  order: [],
 };
 
 export const simActionsSlice = createSlice({
@@ -37,16 +42,45 @@ export const simActionsSlice = createSlice({
     ) => {
       return { ...state, addedMinutesinUSD: action.payload };
     },
-    setChosenPackage: (state: InitialSimActionsState,
-      action: PayloadAction<any>) => {
-      return {...state, chosenPackage:action.payload}
-      }
+    setChosenPackage: (
+      state: InitialSimActionsState,
+      action: PayloadAction<any>
+    ) => {
+      return { ...state, chosenPackage: action.payload };
+    },
+    setSimOrder: (
+      state: InitialSimActionsState,
+      action: PayloadAction<SimOrder>
+    ) => {
+      return {
+        ...state,
+        order: [...state.order, action.payload],
+      };
+    },
+    resetSimOrder: (
+      state: InitialSimActionsState,
+      action: PayloadAction<any>
+    ) => {
+      if (action.payload) console.log(state.simNumber);
+      return {
+        ...state,
+        simNumber: initialState.simNumber,
+        simStartDate: initialState.simNumber,
+        selectedCountries: initialState.selectedCountries,
+        addedMinutesInUSD: initialState.addedMinutesInUSD,
+        chosenPackage: initialState.chosenPackage,
+      };
+    },
   },
 });
+
 export const {
   setSimNumber,
   setSimStartDate,
   setSelectedCountries,
   setAddedMinutesinUSD,
+  setChosenPackage,
+  setSimOrder,
+  resetSimOrder,
 } = simActionsSlice.actions;
 export default simActionsSlice.reducer;

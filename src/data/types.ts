@@ -34,12 +34,20 @@ export type InitialContactStateType = {
 export type InitialPackagesState = {
   chosenDeal: string[];
 };
+export type SimOrder = {
+  simNumber?: number | null;
+  simStartDate: Date | null;
+  addedMinutesInUSD?: number;
+  chosenPackage?: any | null;
+};
+
 export type InitialSimActionsState = {
   simNumber: number | null;
-  simStartDate: Date | null;
+  simStartDate: number| Date| null;
   selectedCountries?: SelectedCountriesType | [];
-  addedMinutesinUSD?: number;
+  addedMinutesInUSD?: number;
   chosenPackage?: any | null;
+  order: SimOrder[] | [];
 };
 export type InitialUserInfoType = {
   userSimNumber: string;

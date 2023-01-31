@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setSimNumber } from "../../../redux/SimActionsSlice";
 import { ModalButtons } from "./ModalButtons";
 
@@ -7,9 +7,10 @@ export const EditSimNumber: React.FC<{ closeDialog: () => void }> = ({
   closeDialog,
 }) => {
   const dispatch = useDispatch();
-
   const [userInputNumber, setUserInputNumber] = useState("");
-
+ const { simNumber, simStartDate, addedMinutesinUSD, addedData } = useSelector(
+   (s: any) => s.simActions
+ );
   return (
     <>
       <input
@@ -23,6 +24,10 @@ export const EditSimNumber: React.FC<{ closeDialog: () => void }> = ({
           closeDialog();
         }}
       ></ModalButtons>
+
+
+
+      
     </>
   );
 };
