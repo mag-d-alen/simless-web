@@ -7,6 +7,7 @@ import {
 
 const initialState: InitialSimActionsState = {
   simNumber: null,
+  newSim: false,
   simStartDate: null,
   selectedCountries: [],
   addedMinutesInUSD: 0,
@@ -23,6 +24,12 @@ export const simActionsSlice = createSlice({
       action: PayloadAction<number>
     ) => {
       return { ...state, simNumber: action.payload };
+    },
+    setNewSim: (
+      state: InitialSimActionsState,
+      action: PayloadAction<boolean>
+    ) => {
+      return { ...state, newSim:action.payload};
     },
     setSimStartDate: (
       state: InitialSimActionsState,
@@ -65,7 +72,8 @@ export const simActionsSlice = createSlice({
         return {
           ...state,
           simNumber: initialState.simNumber,
-          simStartDate: initialState.simNumber,
+          newSim:initialState.newSim,
+          simStartDate: initialState.simStartDate,
           selectedCountries: initialState.selectedCountries,
           addedMinutesInUSD: initialState.addedMinutesInUSD,
           chosenPackage: initialState.chosenPackage,
@@ -76,6 +84,7 @@ export const simActionsSlice = createSlice({
 
 export const {
   setSimNumber,
+  setNewSim,
   setSimStartDate,
   setSelectedCountries,
   setAddedMinutesInUSD,

@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import Datepicker from "react-tailwindcss-datepicker";
-
 import { setSimStartDate } from "../../../redux/SimActionsSlice";
 import { ModalButton } from "./ModalButton";
 
-export const EditDate: React.FC<{ closeDialog: () => void }> = ({
+export const EditStartingDate: React.FC<{ closeDialog: () => void }> = ({
   closeDialog,
 }) => {
   const [value, setValue] = useState<any>({
@@ -29,12 +28,12 @@ export const EditDate: React.FC<{ closeDialog: () => void }> = ({
         value={value}
         onChange={handleValueChange}
       />
-       <ModalButton
+      <ModalButton
         clickHandler={() => {
           value && dispatch(setSimStartDate(value.startDate));
           closeDialog();
         }}
-      /> 
+      />
     </>
   );
 };

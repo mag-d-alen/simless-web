@@ -42,7 +42,8 @@ export type SimOrder = {
 };
 
 export type InitialSimActionsState = {
-  simNumber: number | null;
+  simNumber?: number | null;
+  newSim: boolean;
   simStartDate: number| Date| null;
   selectedCountries?: SelectedCountriesType | [];
   addedMinutesInUSD?: number;

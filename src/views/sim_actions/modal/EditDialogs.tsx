@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import { EditData } from "./EditData";
-import { EditDate } from "./EditDate";
+import { EditPackage } from "./EditPackage";
 import { EditMinutes } from "./EditMinutes";
 import { EditSimNumber } from "./EditSimNumber";
 import { ModalDialogWrapper } from "./ModalDialogWrapper";
 import { useSelector } from "react-redux";
+import { EditStartingDate } from "./EditStartingDate";
 
 export const EditDialogs: React.FC<{
   closeDialog: () => void;
@@ -18,11 +19,15 @@ export const EditDialogs: React.FC<{
           {dialogType === "number" && (
             <EditSimNumber closeDialog={closeDialog} />
           )}
-          {dialogType === "date" && <EditDate closeDialog={closeDialog} />}
+          {dialogType === "date" && (
+            <EditStartingDate closeDialog={closeDialog} />
+          )}
           {dialogType === "minutes" && (
             <EditMinutes closeDialog={closeDialog} />
           )}
-          {dialogType === "data" && <EditData closeDialog={closeDialog} />}
+          {dialogType === "chosenPackage" && (
+            <EditPackage closeDialog={closeDialog} />
+          )}
         </div>
       </ModalDialogWrapper>
     </>

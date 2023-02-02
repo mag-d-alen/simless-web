@@ -8,6 +8,7 @@ import { Button } from "../modal/Button";
 import { useDispatch } from "react-redux";
 import { resetSimOrder, setSimOrder } from "../../../redux/SimActionsSlice";
 import { EditButton } from "./EditButton";
+import { SubmitButtons } from "../SubmitButtons";
 
 export const EditButtons: React.FC<{
   showToast: (val: boolean) => void;
@@ -15,7 +16,7 @@ export const EditButtons: React.FC<{
 }> = ({ showToast, openEditDialog }) => {
   const dispatch = useDispatch();
   const [addedSim, setAddedSim] = useState(false);
-  const { simNumber, simStartDate, addedMinutesInUSD, chosenPackage } =
+  const { simNumber, simStartDate, addedMinutesInUSD, chosenPackage, newSim } =
     useSelector((s: any) => s.simActions);
 
   const addSimOrder = () => {
@@ -38,21 +39,34 @@ export const EditButtons: React.FC<{
         summary={simNumber ? `${simNumber} מספר סים` : "בחרו מספר סים"}
         icon={<SimIcon />}
       />
+
+      <EditButton
+        showToast={showToast}
+        handleClick={() =>
+          openEditDialog({
+            type: "chosenPackage",
+            summary: chosenPackage ? " חבילה מבחרה" : "בחרו חבילה",
+          })
+        }
+        summary={chosenPackage ? " חבילה מבחרה" : "בחרו חבילה"}
+        icon={<DataIcon />}
+      />
+
       <EditButton
         showToast={showToast}
         handleClick={() =>
           openEditDialog({
             summary: simStartDate
-              ? `${simStartDate} תאריך הפעלת סים`
-              : "בחרו תאריך הפעלת הסים",
+              ? `${simStartDate} תאריך הפעלת החבילה`
+              : "בחרו תאריך הפלעת החבילה",
 
             type: "date",
           })
         }
         summary={
           simStartDate
-            ? `${simStartDate} תאריך הפעלת הסים`
-            : "בחרו תאריך הפעלת הסים"
+            ? `${simStartDate} תאריך הפעלת החבילה`
+            : "בחרו תאריך הפלעת החבילה"
         }
         icon={<DateIcon />}
       />
@@ -74,41 +88,8 @@ export const EditButtons: React.FC<{
         }
         icon={<PhoneIcon />}
       />
-      <EditButton
-        showToast={showToast}
-        handleClick={() =>
-          openEditDialog({
-            type: "data",
-            summary: chosenPackage
-              ? `${chosenPackage}G הוספתם `
-              : " ?כמה תרצו לגלוש",
-          })
-        }
-        summary={
-          chosenPackage ? `${chosenPackage}G הוספתם ` : " ?כמה תרצו לגלוש"
-        }
-        icon={<DataIcon />}
-      />
 
-      <div className="flex items-center w-full py-4 ">
-        {addedSim ? (
-          <>
-            <Button
-              text="add another sim"
-              handleClick={() => {
-                dispatch(resetSimOrder(true));
-                setAddedSim(!addedSim);
-              }}
-            />
-            <Button
-              text="go to checkout"
-              handleClick={() => dispatch(resetSimOrder(true))}
-            />
-          </>
-        ) : simStartDate?.length ? (
-          <Button text="add sim" handleClick={addSimOrder} />
-        ) : null}
-      </div>
+      <SubmitButtons />
     </div>
   );
 };
