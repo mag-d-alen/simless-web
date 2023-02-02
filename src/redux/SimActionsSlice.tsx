@@ -36,11 +36,11 @@ export const simActionsSlice = createSlice({
     ) => {
       return { ...state, selectedCountries: action.payload };
     },
-    setAddedMinutesinUSD: (
+    setAddedMinutesInUSD: (
       state: InitialSimActionsState,
       action: PayloadAction<number>
     ) => {
-      return { ...state, addedMinutesinUSD: action.payload };
+      return { ...state, addedMinutesInUSD: action.payload };
     },
     setChosenPackage: (
       state: InitialSimActionsState,
@@ -78,7 +78,7 @@ export const {
   setSimNumber,
   setSimStartDate,
   setSelectedCountries,
-  setAddedMinutesinUSD,
+  setAddedMinutesInUSD,
   setChosenPackage,
   setSimOrder,
   resetSimOrder,
