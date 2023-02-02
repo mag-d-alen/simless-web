@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setSimNumber } from "../../../redux/SimActionsSlice";
-import { ModalButtons } from "./ModalButtons";
+import { ModalButton } from "./ModalButton";
 
 export const EditSimNumber: React.FC<{ closeDialog: () => void }> = ({
   closeDialog,
@@ -18,12 +18,12 @@ export const EditSimNumber: React.FC<{ closeDialog: () => void }> = ({
         placeholder="מספר הסים"
         onChange={(e) => setUserInputNumber(e.target.value)}
       />
-      <ModalButtons
+       <ModalButton
         clickHandler={() => {
           userInputNumber && dispatch(setSimNumber(parseInt(userInputNumber)));
           closeDialog();
         }}
-      ></ModalButtons>
+      ></ModalButton> 
 
 
 

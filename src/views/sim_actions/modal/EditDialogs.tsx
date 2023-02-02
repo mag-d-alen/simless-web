@@ -1,8 +1,7 @@
-import React, { useEffect, } from "react";
+import React, { useEffect } from "react";
 import { EditData } from "./EditData";
 import { EditDate } from "./EditDate";
 import { EditMinutes } from "./EditMinutes";
-import { EditSelectCountry } from "./EditSelectCountry";
 import { EditSimNumber } from "./EditSimNumber";
 import { ModalDialogWrapper } from "./ModalDialogWrapper";
 import { useSelector } from "react-redux";
@@ -12,7 +11,6 @@ export const EditDialogs: React.FC<{
   dialogType?: string;
   summary?: string;
 }> = ({ closeDialog, dialogType = "", summary = "" }) => {
-
   return (
     <>
       <ModalDialogWrapper title={summary} closeDialog={closeDialog}>
@@ -21,16 +19,12 @@ export const EditDialogs: React.FC<{
             <EditSimNumber closeDialog={closeDialog} />
           )}
           {dialogType === "date" && <EditDate closeDialog={closeDialog} />}
-          {dialogType === "countries" && (
-            <EditSelectCountry closeDialog={closeDialog} />
-          )}
           {dialogType === "minutes" && (
             <EditMinutes closeDialog={closeDialog} />
           )}
           {dialogType === "data" && <EditData closeDialog={closeDialog} />}
         </div>
       </ModalDialogWrapper>
-   
     </>
   );
 };

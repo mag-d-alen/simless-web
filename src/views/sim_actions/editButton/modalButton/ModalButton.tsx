@@ -1,7 +1,8 @@
 import React from "react";
-import { Button } from "./Button";
+import { Button } from "../../modal/Button";
 
-export const ModalButtons: React.FC<{
+
+export const ModalButton: React.FC<{
   clickHandler: () => void;
 }> = ({ clickHandler }) => {
   return (

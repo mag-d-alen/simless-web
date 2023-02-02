@@ -3,7 +3,7 @@ import React from "react";
 import { initialData, InvoiceSchema } from "./form data";
 import { FormEntry } from "./FormEntry";
 import { InvoiceType } from "../../data/types";
-import { Button } from "../editButton/modal/Button";
+import { Button } from "../sim_actions/modal/Button";
 import { GoBack } from "../balance/topup/GoBack";
 
 export const InvoiceForm: React.FC<{

@@ -1,5 +1,5 @@
 import React from "react";
-import { AddAnimation } from "../../../stylingComponents/AddAnimation";
+import { AddAnimation } from "../../../../stylingComponents/AddAnimation";
 import { CloseDialogIcon } from "./CloseDialogIcon";
 
 export const Toast: React.FC<{

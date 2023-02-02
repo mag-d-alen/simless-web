@@ -11,7 +11,7 @@ import {
   setTopUpSimNumber,
 } from "../../../redux/TopUpSlice";
 import { GoBack } from "./GoBack";
-import { Button } from "../../editButton/modal/Button";
+import { Button } from "../../sim_actions/modal/Button";
 
 export const TopUpBalance: React.FC = () => {
   const dispatch = useDispatch();

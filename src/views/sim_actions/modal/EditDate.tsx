@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import Datepicker from "react-tailwindcss-datepicker";
 
 import { setSimStartDate } from "../../../redux/SimActionsSlice";
-import { ModalButtons } from "./ModalButtons";
+import { ModalButton } from "./ModalButton";
 
 export const EditDate: React.FC<{ closeDialog: () => void }> = ({
   closeDialog,
@@ -29,12 +29,12 @@ export const EditDate: React.FC<{ closeDialog: () => void }> = ({
         value={value}
         onChange={handleValueChange}
       />
-      <ModalButtons
+       <ModalButton
         clickHandler={() => {
           value && dispatch(setSimStartDate(value.startDate));
           closeDialog();
         }}
-      />
+      /> 
     </>
   );
 };

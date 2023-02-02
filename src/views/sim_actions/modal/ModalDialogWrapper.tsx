@@ -1,6 +1,6 @@
 import React from "react";
 import { AddAnimation } from "../../../stylingComponents/AddAnimation";
-import { CloseDialogIcon } from "../icons/CloseDialogIcon";
+import { CloseDialogIcon } from "../editButton/icons/CloseDialogIcon";
 
 export const ModalDialogWrapper: React.FC<{
   title: string;

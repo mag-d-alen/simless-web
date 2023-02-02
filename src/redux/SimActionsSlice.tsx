@@ -61,15 +61,15 @@ export const simActionsSlice = createSlice({
       state: InitialSimActionsState,
       action: PayloadAction<any>
     ) => {
-      if (action.payload) console.log(state.simNumber);
-      return {
-        ...state,
-        simNumber: initialState.simNumber,
-        simStartDate: initialState.simNumber,
-        selectedCountries: initialState.selectedCountries,
-        addedMinutesInUSD: initialState.addedMinutesInUSD,
-        chosenPackage: initialState.chosenPackage,
-      };
+      if (action.payload)
+        return {
+          ...state,
+          simNumber: initialState.simNumber,
+          simStartDate: initialState.simNumber,
+          selectedCountries: initialState.selectedCountries,
+          addedMinutesInUSD: initialState.addedMinutesInUSD,
+          chosenPackage: initialState.chosenPackage,
+        };
     },
   },
 });

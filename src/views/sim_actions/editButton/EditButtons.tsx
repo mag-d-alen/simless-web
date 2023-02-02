@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import { EditButton } from "./EditButton";
 import { DataIcon } from "./icons/DataIcon";
 import { DateIcon } from "./icons/DateIcon";
 import { PhoneIcon } from "./icons/PhoneIcon";
 import { SimIcon } from "./icons/SimIcon";
-import { Button } from "./modal/Button";
+import { Button } from "../modal/Button";
 import { useDispatch } from "react-redux";
-import { resetSimOrder, setSimOrder } from "../../redux/SimActionsSlice";
-import { orderSimApi } from "../../redux/api/orderSimApi";
+import { resetSimOrder, setSimOrder } from "../../../redux/SimActionsSlice";
+import { EditButton } from "./EditButton";
 
 export const EditButtons: React.FC<{
   showToast: (val: boolean) => void;
@@ -23,7 +22,6 @@ export const EditButtons: React.FC<{
     dispatch(
       setSimOrder({ simNumber, simStartDate, addedMinutesInUSD, chosenPackage })
     );
-    dispatch(resetSimOrder(true));
     setAddedSim(!addedSim);
   };
 
@@ -92,10 +90,16 @@ export const EditButtons: React.FC<{
         icon={<DataIcon />}
       />
 
-      <div className="flex items-center w-full p-6 space-x-2 ">
+      <div className="flex items-center w-full py-4 ">
         {addedSim ? (
           <>
-            <Button text="add another sim" handleClick={addSimOrder} />
+            <Button
+              text="add another sim"
+              handleClick={() => {
+                dispatch(resetSimOrder(true));
+                setAddedSim(!addedSim);
+              }}
+            />
             <Button
               text="go to checkout"
               handleClick={() => dispatch(resetSimOrder(true))}

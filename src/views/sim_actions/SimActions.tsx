@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { EditDialogs } from "../editButton/modal/EditDialogs";
+import { EditDialogs } from "./modal/EditDialogs";
 import { SelectCountry } from "./SelectCountry";
-import { Toast } from "../editButton/icons/Toast";
-import { EditButtons } from "../editButton/EditButtons";
+import { Toast } from "./editButton/icons/Toast";
+import { EditButtons } from "./editButton/EditButtons";
 
 export const SimActions: React.FC = () => {
   const [openEditDialog, setOpenEditDialog] = useState<{

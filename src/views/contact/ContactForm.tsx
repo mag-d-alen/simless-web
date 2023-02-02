@@ -5,7 +5,7 @@ import { FormEntry } from "../form/FormEntry";
 import { FormTextArea } from "../form/FormTextArea";
 import { splitAndCapitalize } from "../../data/splitAndCapitalize";
 import { ContactFormInputType } from "../../data/types";
-import { Button } from "../editButton/modal/Button";
+import { Button } from "../sim_actions/modal/Button";
 import { FormMainContainer } from "../form/form.styled";
 import { getHebrewVersion } from "../../data/getHebrewVersion";
 

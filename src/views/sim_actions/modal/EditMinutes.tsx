@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { setAddedMinutesinUSD } from "../../../redux/SimActionsSlice";
 import { DisplayMinutes } from "./DisplayMinutes";
-import { ModalButtons } from "./ModalButtons";
+import { ModalButton } from "./ModalButton";
 import { RangeSlider } from "./RangeSlider";
 
 export const EditMinutes: React.FC<{ closeDialog: () => void }> = ({
@@ -14,12 +14,12 @@ export const EditMinutes: React.FC<{ closeDialog: () => void }> = ({
     <>
       <RangeSlider setDollars={setDollars} />
       <DisplayMinutes dollars={dollars} />
-      <ModalButtons
+       <ModalButton
         clickHandler={() => {
           dispatch(setAddedMinutesinUSD(dollars));
           closeDialog();
         }}
-      />
+      /> 
     </>
   );
 };

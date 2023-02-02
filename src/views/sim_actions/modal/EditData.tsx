@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { ModalButtons } from "./ModalButtons";
+import { ModalButton } from "./ModalButton";
 import { useGetPackagesQuery } from "../../../redux/api/packagesApi";
 import { AvailablePackages } from "../../availablePackages/AvailablePackages";
 import { setChosenPackage } from "../../../redux/SimActionsSlice";
@@ -30,12 +30,12 @@ export const EditData: React.FC<{
         </div>
       ) : null}
 
-      <ModalButtons
+      <ModalButton
         clickHandler={() => {
           if (packageSelected) dispatch(setChosenPackage(packageSelected));
           closeDialog();
         }}
-      />
+      /> 
     </>
   );
 };

@@ -7,7 +7,7 @@ import {
   setCheckoutStep,
 } from "../../redux/TopUpSlice";
 import { InvoiceForm } from "./InvoiceForm";
-import { ModalDialogWrapper } from "../editButton/modal/ModalDialogWrapper";
+import { ModalDialogWrapper } from "../sim_actions/modal/ModalDialogWrapper";
 
 export const UserDetails: React.FC = () => {
   const dispatch = useDispatch();
