@@ -16,10 +16,11 @@ export const EditSimNumber: React.FC<{ closeDialog: () => void }> = ({
       <div className="flex flex-col w-full h-40 items-center gap-4 ">
         <div className="flex w-full items-center justify-end gap-4 ">
           <input
+            className="w-6 h-6 text-purple-500 bg-gray-100 border-gray-300 rounded focus:ring-purple-300 dark:focus:ring-purple-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
             type="checkbox"
             onChange={() => setOrderingNewSim(!orderingNewSim)}
           />
-          <h3>אין לי סים</h3>
+          <h3 className="text-bold text-lg">אין לי סים</h3>
         </div>
         {!orderingNewSim ? (
           <input

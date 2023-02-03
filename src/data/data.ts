@@ -40,24 +40,42 @@ export const countriesList = [
   { value: "CH", label: "שוויץ" },
   { value: "RO", label: "רומניה" },
 ];
-export const packages = [
+export const test = [
   {
-    name: "package1", // string
-    countries: ["IRL", "RO", "SUE"], //string[] However, to display we would need to map the code names onto display names. so optionally:
+    id: 1,
+    name: "package1",
+    countries: ["ISL", "GBR", "I", "IRL", "ROM"],
     countriesData: [
-      { value: "IRL", label: "אירלנד" },
-      { value: "CH", label: "שוויץ" },
-      { value: "RO", label: "רומניה" },
+      { minutes: 20, label: "אירלנד" },
+      { minutes: 10, label: "הודו" },
+      { minutes: 5, label: "רומניה" },
+      { minutes: 25, label: "אנגליה" },
+      { minutes: 15, label: "ישראל" },
     ],
-    gb: 9, //number
+    gb: 1, //number
   },
   {
+    id: 2,
     name: "package2",
-    countries: ["CH", "IRL"],
+    countries: ["GBR", "POL", "ISR"],
+    countriesData: [
+      { minutes: 15, label: "ישראל" },
+      { minutes: 10, label: "פולין" },
+      { minutes: 5, label: "אנגליה" },
+    ],
+    gb: 5,
   },
   {
+    id: 3,
     name: "package3",
-    countries: ["RO", "IRL", "IL"],
+    countries: ["GBR", "MAR", "POL", "ISR"],
+    countriesData: [
+      { minutes: 15, label: "ישראל" },
+      { minutes: 10, label: "מרוקו" },
+      { minutes: 10, label: "פולין" },
+      { minutes: 3, label: "אנגליה" },
+    ],
+    gb: 3,
   },
 ];
 

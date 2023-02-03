@@ -23,13 +23,13 @@ export const simActionsSlice = createSlice({
       state: InitialSimActionsState,
       action: PayloadAction<number>
     ) => {
-      return { ...state, simNumber: action.payload };
+      return { ...state, simNumber: action.payload, newSim: false };
     },
     setNewSim: (
       state: InitialSimActionsState,
       action: PayloadAction<boolean>
     ) => {
-      return { ...state, newSim:action.payload};
+      return { ...state, newSim: action.payload, simNumber: null };
     },
     setSimStartDate: (
       state: InitialSimActionsState,
@@ -72,7 +72,7 @@ export const simActionsSlice = createSlice({
         return {
           ...state,
           simNumber: initialState.simNumber,
-          newSim:initialState.newSim,
+          newSim: initialState.newSim,
           simStartDate: initialState.simStartDate,
           selectedCountries: initialState.selectedCountries,
           addedMinutesInUSD: initialState.addedMinutesInUSD,

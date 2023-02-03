@@ -33,11 +33,23 @@ export const EditButtons: React.FC<{
         handleClick={() =>
           openEditDialog({
             type: "number",
-            summary: simNumber ? `${simNumber} מספר הסים` : "בחרו מספר סים",
+            summary:
+              simNumber | newSim
+                ? simNumber
+                  ? `${simNumber} מספר הסים`
+                  : "סים חדש"
+                : "בחרו מספר סים",
           })
         }
-        summary={simNumber ? `${simNumber} מספר סים` : "בחרו מספר סים"}
+        summary={
+          simNumber | newSim
+            ? simNumber
+              ? `${simNumber} מספר הסים`
+              : "סים חדש"
+            : "בחרו מספר סים"
+        }
         icon={<SimIcon />}
+        filled={!!(simNumber || newSim)}
       />
 
       <EditButton
@@ -45,31 +57,35 @@ export const EditButtons: React.FC<{
         handleClick={() =>
           openEditDialog({
             type: "chosenPackage",
-            summary: chosenPackage ? " חבילה מבחרה" : "בחרו חבילה",
+            summary: chosenPackage ? " חבילה נבחרה" : "בחרו חבילה",
           })
         }
-        summary={chosenPackage ? " חבילה מבחרה" : "בחרו חבילה"}
+        summary={chosenPackage ? " חבילה נבחרה" : "בחרו חבילה"}
         icon={<DataIcon />}
+        filled={!!chosenPackage}
       />
 
-      <EditButton
-        showToast={showToast}
-        handleClick={() =>
-          openEditDialog({
-            summary: simStartDate
+      {chosenPackage ? (
+        <EditButton
+          showToast={showToast}
+          handleClick={() =>
+            openEditDialog({
+              summary: simStartDate
+                ? `${simStartDate} תאריך הפעלת החבילה`
+                : "בחרו תאריך הפלעת החבילה",
+
+              type: "date",
+            })
+          }
+          summary={
+            simStartDate
               ? `${simStartDate} תאריך הפעלת החבילה`
-              : "בחרו תאריך הפלעת החבילה",
-
-            type: "date",
-          })
-        }
-        summary={
-          simStartDate
-            ? `${simStartDate} תאריך הפעלת החבילה`
-            : "בחרו תאריך הפלעת החבילה"
-        }
-        icon={<DateIcon />}
-      />
+              : "בחרו תאריך הפלעת החבילה"
+          }
+          icon={<DateIcon />}
+          filled={!!simStartDate}
+        />
+      ) : null}
 
       <EditButton
         showToast={showToast}
@@ -87,6 +103,7 @@ export const EditButtons: React.FC<{
             : " ?הלו, אמא"
         }
         icon={<PhoneIcon />}
+        filled={!!addedMinutesInUSD}
       />
 
       <SubmitButtons />

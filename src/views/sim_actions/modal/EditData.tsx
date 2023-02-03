@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { ModalButton } from "./ModalButton";
 import { useGetPackagesQuery } from "../../../redux/api/packagesApi";
-import { AvailablePackages } from "../../availablePackages/AvailablePackages";
+import { AvailablePackages } from "./availablePackages/AvailablePackages";
 import { setChosenPackage } from "../../../redux/SimActionsSlice";
 
 export const EditData: React.FC<{
@@ -15,7 +15,7 @@ export const EditData: React.FC<{
 
   return (
     <>
-      {isLoading ? <div>Loading...</div> : <AvailablePackages />}
+      {isLoading ? <div>Loading...</div> : <AvailablePackages closeDialog={closeDialog} />}
       {selectedCountries.length ? (
         <div className="flex flex-col mb-4 ">
           <h2 className="flex text-md justify-center uppercase text-purple-600">
