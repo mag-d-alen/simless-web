@@ -35,8 +35,9 @@ export type InitialPackagesState = {
   chosenDeal: string[];
 };
 export type SimOrder = {
-  simNumber?: number | null;
-  simStartDate: Date | null;
+  simNumber?: number;
+  newSim: boolean;
+  simStartDate?: string;
   addedMinutesInUSD?: number;
   chosenPackage?: any | null;
 };
@@ -44,10 +45,10 @@ export type SimOrder = {
 export type InitialSimActionsState = {
   simNumber?: number | null;
   newSim: boolean;
-  simStartDate: number| Date| null;
+  simStartDate: number | Date | null;
   selectedCountries?: SelectedCountriesType | [];
   addedMinutesInUSD?: number;
-  chosenPackage?: any | null;
+  chosenPackage?: number | undefined;
   order: SimOrder[] | [];
 };
 export type InitialUserInfoType = {
@@ -113,15 +114,9 @@ export type CardPaymentInputType = {
   cvv: number;
 };
 
-export type SimPackageType = any
- //// {
-
-  // countries: string[],
-  // id: number,
-  // name:string,
-  // gb: number,
-  // countriesData: {
-  //   label: string //country name in Hebrew
-  //   minutes: number
-  // }
-//}
+export type SimPackageType = {
+  countries: string[];
+  id: number;
+  name: string;
+  gb: number;
+};

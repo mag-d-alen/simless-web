@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useGetPackagesQuery } from "../../../../redux/api/packagesApi";
 import { Package } from "./Package";
 import { useDispatch, useSelector } from "react-redux";
 import { test } from "../../../../data/data";
@@ -20,8 +19,8 @@ export const AvailablePackages: React.FC<{ closeDialog: () => void }> = ({
   // const { data: simPackages } = useGetPackagesQuery(selectedCountries);
   //this is a dummy object not to break the ux until we have data from API
   const dispatch = useDispatch();
-  const [pack, setPack] = useState<SimPackageType | null>(null);
-  const choosePackage = (pack: SimPackageType | null) => {
+  const [pack, setPack] = useState<SimPackageType | undefined>(undefined);
+  const choosePackage = (pack: SimPackageType | undefined) => {
     setPack(pack);
   };
   const allSimPackages = test; // this will be data from API
@@ -34,9 +33,9 @@ export const AvailablePackages: React.FC<{ closeDialog: () => void }> = ({
       )
     : [];
   const reset = () => {
-    setPack(null);
+    setPack(undefined);
     setSelectedCountries([]);
-    dispatch(setChosenPackage(null));
+    dispatch(setChosenPackage(undefined));
   };
 
   return (
@@ -50,7 +49,7 @@ export const AvailablePackages: React.FC<{ closeDialog: () => void }> = ({
               choose={choosePackage}
               chosen={
                 simPackage.id === pack?.id ||
-                chosenPackage?.id === simPackage.id
+                chosenPackage === simPackage.id
               }
             />
           ))
@@ -58,7 +57,7 @@ export const AvailablePackages: React.FC<{ closeDialog: () => void }> = ({
       <div className="flex w-full gap-2 items-center justify-center py-4 flex-col xs:flex-row ">
         <ModalButton
           clickHandler={() => {
-            dispatch(setChosenPackage(pack));
+            dispatch(setChosenPackage(pack?.id));
             closeDialog();
           }}
         />

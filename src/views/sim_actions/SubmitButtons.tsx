@@ -11,7 +11,7 @@ export const SubmitButtons: React.FC = () => {
 
   const addSimOrder = () => {
     dispatch(
-      setSimOrder({ simNumber, simStartDate, addedMinutesInUSD, chosenPackage })
+      setSimOrder({ simNumber, simStartDate, addedMinutesInUSD, chosenPackage, newSim })
     );
     setAddedSim(!addedSim);
   };
