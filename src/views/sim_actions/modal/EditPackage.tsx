@@ -10,7 +10,6 @@ export const EditPackage: React.FC<{
   closeDialog: () => void;
 }> = ({ closeDialog }) => {
   const dispatch = useDispatch();
-  const [packageSelected, setPackageSelected] = useState<number | null>(null);
   const { selectedCountries } = useSelector((s: any) => s.simActions);
   const { isLoading } = useGetPackagesQuery(selectedCountries);
 

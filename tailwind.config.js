@@ -7,6 +7,9 @@ module.exports = {
   ],
 
   theme: {
+    screens: {
+      xs: "325px",
+    },
     theme: {
       extend: {
         animation: {

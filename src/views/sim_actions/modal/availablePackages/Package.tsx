@@ -1,17 +1,17 @@
 import React from "react";
 import { splitAndCapitalize } from "../../../../data/splitAndCapitalize";
-import { useSelector } from "react-redux";
+import { SimPackageType } from "../../../../data/types";
 
 export const Package: React.FC<{
-  simPackage: any;
-  choose: (pack: any) => void;
-}> = ({ simPackage, choose }) => {
-  const { chosenPackage } = useSelector((s: any) => s.simActions);
+  simPackage: SimPackageType;
+  choose: (pack: SimPackageType) => void;
+  chosen:boolean
+}> = ({ simPackage, choose, chosen }) => {
 
   return (
     <div
-      className={`flex p-2 flex-col items:center rounded-lg shadow-sm shadow hover:shadow-lg m-4 p-4 ${
-        chosenPackage?.id === simPackage?.id ? " border-2 border-purple-300" : null
+      className={`flex p-2 flex-col rounded-lg shadow-sm shadow hover:shadow-lg m-4 p-4 ${
+        chosen ? " border-2 border-purple-300" : null
       }`}
       onClick={() => choose(simPackage)}>
       <div className="flex justify-center text-purple-400">

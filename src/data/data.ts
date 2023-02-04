@@ -44,7 +44,7 @@ export const test = [
   {
     id: 1,
     name: "package1",
-    countries: ["ISL", "GBR", "I", "IRL", "ROM"],
+    countries: ["ISL", "GBR", "IND", "IRL", "ROU"],
     countriesData: [
       { minutes: 20, label: "אירלנד" },
       { minutes: 10, label: "הודו" },
@@ -68,10 +68,10 @@ export const test = [
   {
     id: 3,
     name: "package3",
-    countries: ["GBR", "MAR", "POL", "ISR"],
+    countries: ["GBR", "FIN", "POL", "ISR"],
     countriesData: [
       { minutes: 15, label: "ישראל" },
-      { minutes: 10, label: "מרוקו" },
+      { minutes: 10, label: "פינלנד" },
       { minutes: 10, label: "פולין" },
       { minutes: 3, label: "אנגליה" },
     ],

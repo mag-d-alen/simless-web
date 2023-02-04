@@ -3,6 +3,7 @@ import {
   InitialSimActionsState,
   SelectedCountriesType,
   SimOrder,
+  SimPackageType,
 } from "../data/types";
 
 const initialState: InitialSimActionsState = {
@@ -51,7 +52,7 @@ export const simActionsSlice = createSlice({
     },
     setChosenPackage: (
       state: InitialSimActionsState,
-      action: PayloadAction<any>
+      action: PayloadAction<SimPackageType | null>
     ) => {
       return { ...state, chosenPackage: action.payload };
     },

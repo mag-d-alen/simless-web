@@ -23,6 +23,8 @@ export const EditSimNumber: React.FC<{ closeDialog: () => void }> = ({
           <h3 className="text-bold text-lg">אין לי סים</h3>
         </div>
         {!orderingNewSim ? (
+//validation for phone number
+
           <input
             className="shadow appearance-none border-purple-600 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-purple-200 focus:shadow-outline"
             placeholder="מספר הסים"

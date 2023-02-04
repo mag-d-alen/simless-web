@@ -112,3 +112,16 @@ export type CardPaymentInputType = {
   expiry_Date: string;
   cvv: number;
 };
+
+export type SimPackageType = any
+ //// {
+
+  // countries: string[],
+  // id: number,
+  // name:string,
+  // gb: number,
+  // countriesData: {
+  //   label: string //country name in Hebrew
+  //   minutes: number
+  // }
+//}
