@@ -11,7 +11,13 @@ export const SubmitButtons: React.FC = () => {
 
   const addSimOrder = () => {
     dispatch(
-      setSimOrder({ simNumber, simStartDate, addedMinutesInUSD, chosenPackage, newSim })
+      setSimOrder({
+        simNumber,
+        simStartDate,
+        addedMinutesInUSD,
+        chosenPackage,
+        newSim,
+      })
     );
     setAddedSim(!addedSim);
   };
@@ -20,19 +26,19 @@ export const SubmitButtons: React.FC = () => {
       {addedSim ? (
         <>
           <Button
-            text="add another sim"
+            text="הוסיפו סים נוסף"
             handleClick={() => {
               dispatch(resetSimOrder(true));
               setAddedSim(!addedSim);
             }}
           />
           <Button
-            text="go to checkout"
+            text="המשיכו לתשום"
             handleClick={() => dispatch(resetSimOrder(true))}
           />
         </>
       ) : newSim || simNumber ? (
-        <Button text="add sim" handleClick={addSimOrder} />
+        <Button text="הוסיפו סים " handleClick={addSimOrder} />
       ) : null}
     </div>
   );

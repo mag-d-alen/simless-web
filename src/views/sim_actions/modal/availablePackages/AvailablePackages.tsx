@@ -40,7 +40,7 @@ export const AvailablePackages: React.FC<{ closeDialog: () => void }> = ({
 
   return (
     <div>
-      <h3 className="flex justify-center">בחרו חבילה</h3>
+       {relevantPackages.length? <h3 className="flex justify-center">בחרו חבילה</h3>: null}
       {relevantPackages.length
         ? relevantPackages.map((simPackage: SimPackageType) => (
             <Package
