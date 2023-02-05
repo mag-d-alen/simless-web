@@ -1,7 +1,7 @@
 import { Formik, Form } from "formik";
 import React from "react";
 
-import { TopUpSchema } from "../../form/form data";
+import { InvoiceSchema } from "../../form/form data";
 import { FormEntry } from "../../form/FormEntry";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -22,7 +22,7 @@ export const TopUpBalance: React.FC = () => {
       {checkoutStep > 1 && <GoBack />}
       <Formik
         initialValues={{ sim: "", amount: "" }}
-        validationSchema={TopUpSchema}
+        validationSchema={InvoiceSchema}
         onSubmit={(values) => {
           dispatch(setTopUpSimNumber(values.sim));
           dispatch(setTopUpSimAmount(values.amount));

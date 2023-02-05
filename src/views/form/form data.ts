@@ -4,8 +4,9 @@ const phoneRegExp =
   /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 const amountRegExp = /^[0-9]*$/;
 const numsAndLettersRegExp = /^[aA-zZ0-9]+$/;
-const letterOnlyRegExp = /^[a-zA-Z\s]*$/;
+const letterOnlyRegExp = /^[a-zA-Z\\u0590-\u05FF\s]*$/;
 const dateRegExp = /^(0[1-9]|1[0-2])\/?([2-9]{2})$/;
+export const simRegExp = /^(372)([0-9])+$/;
 
 export const initialData = {
   first_Name: "",
@@ -21,6 +22,8 @@ export const initialData = {
   // country: "",
   oneForm: true,
 };
+
+
 export const InvoiceSchema = Yup.object().shape({
   first_Name: Yup.string()
     .matches(letterOnlyRegExp, "enter correct name")
@@ -36,9 +39,9 @@ export const InvoiceSchema = Yup.object().shape({
     .max(50, "Maximum length is 50 characters"),
   email: Yup.string().email("Enter correct email").required("Required"),
   sim: Yup.string()
-    .matches(phoneRegExp, "Phone number is not valid")
-    .min(8, "Enter correct phone number")
-    .max(8, "Enter correct phone number"),
+    .matches(simRegExp, "Phone number is not valid")
+    .min(11, "Enter correct phone number")
+    .max(11, "Enter correct phone number"),
 
   phone: Yup.string()
     .matches(phoneRegExp, "Phone number is not valid")
@@ -71,10 +74,11 @@ export const CheckBalanceSchema = Yup.object().shape({
     .min(8, "Enter correct phone number")
     .required("Required"),
 });
-export const TopUpSchema = Yup.object().shape({
+export const Invoice = Yup.object().shape({
   sim: Yup.string()
-    .matches(phoneRegExp, "Phone number is not valid")
-    .min(8, "Enter correct phone number")
+    .matches(simRegExp, "Phone number is not valid")
+    .min(11, "Enter correct phone number")
+    .max(11, "Enter correct phone number")
     .required("Required"),
   amount: Yup.string()
     .matches(amountRegExp, "insert a value amount")
