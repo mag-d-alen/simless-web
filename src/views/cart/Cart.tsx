@@ -7,7 +7,8 @@ import { useSelector } from "react-redux";
 export const Cart: React.FC<{ closeDialog: () => void }> = ({
   closeDialog,
 }) => {
-  const { firstName } = useSelector((s: any) => s.topUp);
+  const { order } = useSelector((s: any) => s.simActions);
+  if (!order.length) closeDialog();
   return (
     <ModalDialogWrapper
       title={"כרטיסי סים בסל הקניות"}
@@ -15,7 +16,6 @@ export const Cart: React.FC<{ closeDialog: () => void }> = ({
       <div className="flex flex-col">
         <CartContent />
         <UserDetails closeDialog={closeDialog} />
-        {firstName}
       </div>
     </ModalDialogWrapper>
   );
