@@ -39,7 +39,7 @@ export const SubmitButtons: React.FC<{
             }}
           />
           <Button
-            text="המשיכו לתשום"
+            text="המשיכו לתשלום"
             handleClick={() => {
               dispatch(resetSimOrder(true));
               updateShowCart(true);

@@ -16,12 +16,25 @@ export const EditButtons: React.FC<{
 }> = ({ showToast, openEditDialog }) => {
   const dispatch = useDispatch();
   const [addedSim, setAddedSim] = useState(false);
-  const { simNumber, simStartDate, addedMinutesInUSD, chosenPackage, newSim, id } =
-    useSelector((s: any) => s.simActions);
+  const {
+    simNumber,
+    simStartDate,
+    addedMinutesInUSD,
+    chosenPackage,
+    newSim,
+    id,
+  } = useSelector((s: any) => s.simActions);
 
   const addSimOrder = () => {
     dispatch(
-      setSimOrder({ simNumber, simStartDate, addedMinutesInUSD, chosenPackage, newSim, id })
+      setSimOrder({
+        simNumber,
+        simStartDate,
+        addedMinutesInUSD,
+        chosenPackage,
+        newSim,
+        id,
+      })
     );
     setAddedSim(!addedSim);
   };
@@ -72,7 +85,7 @@ export const EditButtons: React.FC<{
             openEditDialog({
               summary: simStartDate
                 ? `${simStartDate} תאריך הפעלת החבילה`
-                : "בחרו תאריך הפלעת החבילה",
+                : "בחרו תאריך הפעלת החבילה",
 
               type: "date",
             })
@@ -80,7 +93,7 @@ export const EditButtons: React.FC<{
           summary={
             simStartDate
               ? `${simStartDate} תאריך הפעלת החבילה`
-              : "בחרו תאריך הפלעת החבילה"
+              : "בחרו תאריך הפעלת החבילה"
           }
           icon={<DateIcon />}
           filled={!!simStartDate}
