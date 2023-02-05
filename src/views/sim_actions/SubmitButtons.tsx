@@ -22,7 +22,7 @@ export const SubmitButtons: React.FC = () => {
     setAddedSim(!addedSim);
   };
   return (
-    <div className="flex items-center w-full py-4 ">
+    <div className="flex items-center w-full flex-col gap-2 xs:gap-0 xs:flex-row py-4 ">
       {addedSim ? (
         <>
           <Button
