@@ -1,8 +1,8 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { setCheckoutStep } from "../../../redux/TopUpSlice";
-import { CloseDialogIcon } from "../../sim_actions/editButton/icons/CloseDialogIcon";
-import { Button } from "../../sim_actions/modal/Button";
+import { CloseDialogIcon } from "../../simActions/editButton/icons/CloseDialogIcon";
+import { Button } from "../../simActions/modal/Button";
 
 export const GoBack = () => {
   const dispatch = useDispatch();

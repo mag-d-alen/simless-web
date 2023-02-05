@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { faqData } from "../../../data/data";
 import { splitAndCapitalize } from "../../../data/splitAndCapitalize";
-import { ChevronDown } from "../../sim_actions/editButton/icons/ChevronDown";
+import { ChevronDown } from "../../simActions/editButton/icons/ChevronDown";
 
 import {
   AccordionContainer,

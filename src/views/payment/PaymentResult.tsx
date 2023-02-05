@@ -24,7 +24,6 @@ export const PaymentResult: React.FC = () => {
           setIsOpen(false);
           createInvoice({});
           dispatch(setCheckoutStep(1));
-          // dispatch(resetChosenDeal(""));
           dispatch(resetUserInvoiceInfo(null));
           dispatch(resetUserPaymentInfo(null));
         }}>

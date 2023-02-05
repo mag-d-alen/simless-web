@@ -16,12 +16,12 @@ export const EditButtons: React.FC<{
 }> = ({ showToast, openEditDialog }) => {
   const dispatch = useDispatch();
   const [addedSim, setAddedSim] = useState(false);
-  const { simNumber, simStartDate, addedMinutesInUSD, chosenPackage, newSim } =
+  const { simNumber, simStartDate, addedMinutesInUSD, chosenPackage, newSim, id } =
     useSelector((s: any) => s.simActions);
 
   const addSimOrder = () => {
     dispatch(
-      setSimOrder({ simNumber, simStartDate, addedMinutesInUSD, chosenPackage, newSim })
+      setSimOrder({ simNumber, simStartDate, addedMinutesInUSD, chosenPackage, newSim, id })
     );
     setAddedSim(!addedSim);
   };
@@ -105,8 +105,6 @@ export const EditButtons: React.FC<{
         icon={<PhoneIcon />}
         filled={!!addedMinutesInUSD}
       />
-
-      <SubmitButtons />
     </div>
   );
 };

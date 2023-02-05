@@ -6,7 +6,7 @@ export const ModalButton: React.FC<{
   clickHandler: () => void;
 }> = ({ clickHandler, text = "שמור שינויים" }) => {
   return (
-    <div className="flex items-center xs:py-6 space-x-2 ">
+    <div className="flex items-center justify-center xs:py-6 space-x-2 ">
       <Button
         text={text}
         handleClick={() => {

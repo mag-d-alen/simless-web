@@ -34,31 +34,10 @@ const initialState: InitialTopuUpState = {
   paymentSuccess: null,
 };
 
-export const topUpSlice = createSlice({
-  name: "topUp",
+export const invoiceFormSlice = createSlice({
+  name: "invoice",
   initialState,
   reducers: {
-    setTopUpSimNumber: (
-      state: InitialTopuUpState,
-      action: PayloadAction<string>
-    ) => {
-      return { ...state, topUpSimNumber: "372" + action.payload };
-    },
-    setTopUpSimAmount: (
-      state: InitialTopuUpState,
-      action: PayloadAction<string>
-    ) => {
-      return { ...state, topUpAmount: action.payload + ".00" };
-    },
-    resetTopUpSimAmount: (
-      state: InitialTopuUpState,
-      action: PayloadAction<string>
-    ) => {
-      return { ...state, topUpAmount: action.payload };
-    },
-    setOrderId: (state: InitialTopuUpState, action: PayloadAction<number>) => {
-      return { ...state, orderId: state.orderId + action.payload };
-    },
     setUserInvoiceInfo: (
       state: InitialTopuUpState,
       action: PayloadAction<InvoiceType>
@@ -83,33 +62,12 @@ export const topUpSlice = createSlice({
     ) => {
       return { ...state, payment: initialState.payment };
     },
-    setCheckoutStep: (
-      state: InitialTopuUpState,
-      action: PayloadAction<number>
-    ) => {
-      if (action.payload === -1 && state.checkoutStep > 1) {
-        return { ...state, checkoutStep: state.checkoutStep - 1 };
-      }
-      return { ...state, checkoutStep: action.payload };
-    },
-    setPaymentSuccess: (
-      state: InitialTopuUpState,
-      action: PayloadAction<boolean>
-    ) => {
-      return { ...state, paymentSuccess: action.payload };
-    },
   },
 });
 export const {
-  setTopUpSimNumber,
-  setTopUpSimAmount,
-  resetTopUpSimAmount,
-  setOrderId,
   setUserInvoiceInfo,
   setUserPaymentInfo,
-  setCheckoutStep,
   resetUserInvoiceInfo,
   resetUserPaymentInfo,
-  setPaymentSuccess,
-} = topUpSlice.actions;
-export default topUpSlice.reducer;
+} = invoiceFormSlice.actions;
+export default invoiceFormSlice.reducer;

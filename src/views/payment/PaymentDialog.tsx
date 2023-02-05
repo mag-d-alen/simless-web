@@ -1,6 +1,6 @@
 import React from "react";
-
 import { DialogBodyContainer, DialogContainer } from "./payment.styled";
+import { CloseDialogIcon } from "../simActions/editButton/icons/CloseDialogIcon";
 
 export const PaymentDialog: React.FC<{
   isOpen: boolean;
@@ -9,13 +9,13 @@ export const PaymentDialog: React.FC<{
   return (
     <DialogContainer show={isOpen}>
       <DialogBodyContainer>
-        {/* <Button
-          onClick={(e: React.BaseSyntheticEvent<HTMLInputElement>) => {
-            e.stopPropagation();
+        <button
+          onClick={() => {
             close();
           }}>
-          CANCEL
-        </Button> */}
+          <CloseDialogIcon />
+        </button>
+        this is where iframe payment will
         <iframe></iframe>
       </DialogBodyContainer>
     </DialogContainer>

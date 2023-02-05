@@ -34,7 +34,8 @@ export type InitialContactStateType = {
 export type InitialPackagesState = {
   chosenDeal: string[];
 };
-export type SimOrder = {
+export type SimOrderType = {
+  id: string;
   simNumber?: number;
   newSim: boolean;
   simStartDate?: string;
@@ -49,7 +50,7 @@ export type InitialSimActionsState = {
   selectedCountries?: SelectedCountriesType | [];
   addedMinutesInUSD?: number;
   chosenPackage?: number | undefined;
-  order: SimOrder[] | [];
+  order: SimOrderType[] | [];
 };
 export type InitialUserInfoType = {
   userSimNumber: string;

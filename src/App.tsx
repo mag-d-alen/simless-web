@@ -1,5 +1,5 @@
 import React from "react";
-import { SimActions } from "./views/sim_actions/SimActions";
+import { SimActions } from "./views/simActions/SimActions";
 import { Home } from "./views/home/Home";
 import { Routes, Route } from "react-router-dom";
 import { Navbar } from "./views/navbar/Navbar";

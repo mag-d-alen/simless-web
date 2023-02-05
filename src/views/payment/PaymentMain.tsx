@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import { Button } from "../sim_actions/modal/Button";
+import { Button } from "../simActions/modal/Button";
 import { PaymentDialog } from "./PaymentDialog";
 
 export const PaymentMain: React.FC = () => {

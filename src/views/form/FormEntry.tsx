@@ -5,7 +5,7 @@ import { FormField } from "./FormField";
 import Select from "react-select";
 import { countriesList } from "../../data/data";
 import { getHebrewVersion } from "../../data/getHebrewVersion";
-const handleChange = () => {};
+
 export const FormEntry: React.FC<{
   inputfield: string;
   errors: any;
@@ -22,21 +22,14 @@ export const FormEntry: React.FC<{
           {getHebrewVersion(inputfield)}
         </label>
         <div className="flex justify-center content-center relative  ">
-          {inputfield === "sim" || inputfield === "country" ? (
-            inputfield === "sim" ? (
-              <div className="flex gap-4 items-center flex-1">
-                +372
-                <FormField name={inputfield} type={inputfield} />
-              </div>
-            ) : (
-              <Select
-                name={inputfield}
-                options={countriesList}
-                onChange={(selected: any) =>
-                  setValues({ ...values, country: selected.label })
-                }
-              />
-            )
+          {inputfield === "country" ? (
+            <Select
+              name={inputfield}
+              options={countriesList}
+              onChange={(selected: any) =>
+                setValues({ ...values, country: selected.label })
+              }
+            />
           ) : (
             <FormField name={inputfield} type={inputfield} />
           )}

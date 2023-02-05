@@ -3,8 +3,7 @@ import React from "react";
 import { initialData, InvoiceSchema } from "./form data";
 import { FormEntry } from "./FormEntry";
 import { InvoiceType } from "../../data/types";
-import { Button } from "../sim_actions/modal/Button";
-import { GoBack } from "../balance/topup/GoBack";
+import { Button } from "../simActions/modal/Button";
 
 export const InvoiceForm: React.FC<{
   handleSubmit: (values: InvoiceType) => void;
@@ -22,8 +21,13 @@ export const InvoiceForm: React.FC<{
         <Form className="flex flex-col flex-wrap w-full ">
           {oneForm ? (
             <div className="flex text-xs uppercase gap-4 px-8  mb-4 text-gray-500">
-              <Field type="checkbox" name="oneForm" inputfield={"oneForm"} />
-              Use the same address for payment
+              <Field
+                className="w-6 h-6 text-purple-500 bg-gray-100 border-gray-300 rounded focus:ring-purple-300 dark:focus:ring-purple-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                type="checkbox"
+                name="oneForm"
+                inputfield={"oneForm"}
+              />
+              הנפק חשבונית מס לפי פרטי התשלום
             </div>
           ) : null}
 

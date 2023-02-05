@@ -4,14 +4,16 @@ import { InvoiceType } from "../../data/types";
 import {
   setUserInvoiceInfo,
   setUserPaymentInfo,
-  setCheckoutStep,
-} from "../../redux/TopUpSlice";
+} from "../../redux/InvoiceFormSlice";
 import { InvoiceForm } from "./InvoiceForm";
-import { ModalDialogWrapper } from "../sim_actions/modal/ModalDialogWrapper";
+import { PaymentDialog } from "../payment/PaymentDialog";
 
-export const UserDetails: React.FC = () => {
+export const UserDetails: React.FC<{ closeDialog: () => void }> = ({
+  closeDialog,
+}) => {
   const dispatch = useDispatch();
   const [showPaymentForm, setShowPaymentForm] = useState(false);
+  const [goToPayment, setGoToPayment] = useState(false);
 
   const handleSubmit = (values: InvoiceType) => {
     const infoValues = Object.entries(values).reduce(
@@ -22,28 +24,29 @@ export const UserDetails: React.FC = () => {
     if (values.oneForm) {
       dispatch(setUserInvoiceInfo(infoValues));
       dispatch(setUserPaymentInfo(infoValues));
-      dispatch(setCheckoutStep(3));
+      setShowPaymentForm(false);
+      setGoToPayment(true);
     } else {
       if (showPaymentForm) {
         dispatch(setUserPaymentInfo(infoValues));
-        dispatch(setCheckoutStep(3));
       }
       dispatch(setUserInvoiceInfo(infoValues));
       setShowPaymentForm(true);
+      setGoToPayment(true);
     }
   };
   return (
-    <ModalDialogWrapper
-      closeDialog={() => {
-        setShowPaymentForm(false);
-        dispatch(setCheckoutStep(-1));
-      }}
-      title={
-        showPaymentForm
-          ? "  Fill in the payment information details"
-          : " Fill in the Invoice Form"
-      }>
-      <InvoiceForm oneForm={!showPaymentForm} handleSubmit={handleSubmit} />
-    </ModalDialogWrapper>
+    <>
+      {!goToPayment ? (
+        <>
+          <h3 className="text-center text-lg">
+            {showPaymentForm ? "פרטי תשום" : " פרטי חשבונית מס"}
+          </h3>
+          <InvoiceForm oneForm={!showPaymentForm} handleSubmit={handleSubmit} />
+        </>
+      ) : (
+        <PaymentDialog isOpen={false} close={closeDialog} />
+      )}
+    </>
   );
 };

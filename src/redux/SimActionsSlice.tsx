@@ -2,7 +2,7 @@ import { createNextState, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import {
   InitialSimActionsState,
   SelectedCountriesType,
-  SimOrder,
+  SimOrderType,
 } from "../data/types";
 
 const initialState: InitialSimActionsState = {
@@ -57,11 +57,20 @@ export const simActionsSlice = createSlice({
     },
     setSimOrder: (
       state: InitialSimActionsState,
-      action: PayloadAction<SimOrder>
+      action: PayloadAction<SimOrderType>
     ) => {
       return {
         ...state,
         order: [...state.order, action.payload],
+      };
+    },
+    updateSimOrder: (
+      state: InitialSimActionsState,
+      action: PayloadAction<SimOrderType[]>
+    ) => {
+      return {
+        ...state,
+        order: action.payload,
       };
     },
     resetSimOrder: (
@@ -90,6 +99,7 @@ export const {
   setAddedMinutesInUSD,
   setChosenPackage,
   setSimOrder,
+  updateSimOrder,
   resetSimOrder,
 } = simActionsSlice.actions;
 export default simActionsSlice.reducer;

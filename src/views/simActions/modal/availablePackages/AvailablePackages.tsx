@@ -40,7 +40,9 @@ export const AvailablePackages: React.FC<{ closeDialog: () => void }> = ({
 
   return (
     <div>
-       {relevantPackages.length? <h3 className="flex justify-center">בחרו חבילה</h3>: null}
+      {relevantPackages.length ? (
+        <h3 className="flex justify-center">בחרו חבילה</h3>
+      ) : null}
       {relevantPackages.length
         ? relevantPackages.map((simPackage: SimPackageType) => (
             <Package
@@ -48,21 +50,22 @@ export const AvailablePackages: React.FC<{ closeDialog: () => void }> = ({
               simPackage={simPackage}
               choose={choosePackage}
               chosen={
-                simPackage.id === pack?.id ||
-                chosenPackage === simPackage.id
+                simPackage.id === pack?.id || chosenPackage === simPackage.id
               }
             />
           ))
         : null}
-      <div className="flex w-full gap-2 items-center justify-center py-4 flex-col xs:flex-row ">
-        <ModalButton
-          clickHandler={() => {
-            dispatch(setChosenPackage(pack?.id));
-            closeDialog();
-          }}
-        />
-        <ModalButton text="נקה" clickHandler={() => reset()} />
-      </div>
+      {relevantPackages.length ? (
+        <div className="flex w-full gap-2 items-center justify-center py-4 flex-col xs:flex-row ">
+          <ModalButton
+            clickHandler={() => {
+              dispatch(setChosenPackage(pack?.id));
+              closeDialog();
+            }}
+          />
+          <ModalButton text="נקה" clickHandler={() => reset()} />
+        </div>
+      ) : null}
     </div>
   );
 };

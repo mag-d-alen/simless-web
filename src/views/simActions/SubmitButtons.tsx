@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import { resetSimOrder, setSimOrder } from "../../redux/SimActionsSlice";
 import { Button } from "./modal/Button";
 import { useDispatch, useSelector } from "react-redux";
+import { Cart } from "../cart/Cart";
+import { v4 as uuidv4 } from "uuid";
 
-export const SubmitButtons: React.FC = () => {
+
+export const SubmitButtons: React.FC<{updateShowCart:(val:boolean)=>void, showCart:boolean}> = ({showCart, updateShowCart }) => {
   const dispatch = useDispatch();
   const [addedSim, setAddedSim] = useState(false);
   const { simNumber, simStartDate, addedMinutesInUSD, chosenPackage, newSim } =
@@ -12,6 +15,7 @@ export const SubmitButtons: React.FC = () => {
   const addSimOrder = () => {
     dispatch(
       setSimOrder({
+        id: uuidv4(), 
         simNumber,
         simStartDate,
         addedMinutesInUSD,
@@ -22,7 +26,7 @@ export const SubmitButtons: React.FC = () => {
     setAddedSim(!addedSim);
   };
   return (
-    <div className="flex items-center w-full flex-col gap-2 xs:gap-0 xs:flex-row py-4 ">
+    <div className="flex items-center justify-center w-full flex-col xs:gap-2  xs:flex-row py-4 ">
       {addedSim ? (
         <>
           <Button
@@ -34,12 +38,16 @@ export const SubmitButtons: React.FC = () => {
           />
           <Button
             text="המשיכו לתשום"
-            handleClick={() => dispatch(resetSimOrder(true))}
+            handleClick={() => {
+              dispatch(resetSimOrder(true));
+              updateShowCart(true);
+            }}
           />
         </>
       ) : newSim || simNumber ? (
         <Button text="הוסיפו סים " handleClick={addSimOrder} />
       ) : null}
+      {showCart ? <Cart closeDialog={()=>updateShowCart(false)} /> : null}
     </div>
   );
 };
